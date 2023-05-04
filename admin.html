@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Administrador</title>
+    <!-- Agregamos el CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container-fluid">
+             <a class="navbar-brand" href="admin.html">
+                 <img src="img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                 Administrador
+             </a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                     </li>
+                     <li class="nav-item dropdown dropdown-hover">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                             data-bs-toggle="dropdown" aria-expanded="false">
+                             Estudiantes
+                         </a>
+                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <li><a class="dropdown-item" href="#">Editar estudiante</a></li>
+                             <li><a class="dropdown-item" href="#">Total de estudiantes</a></li>
+                             <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+
+                         </ul>
+
+
+
+                     </li>
+                     <li class="nav-item dropdown dropdown-hover">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                             data-bs-toggle="dropdown" aria-expanded="false">
+                             Padres
+                         </a>
+                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <li><a class="dropdown-item" href="">Editar padres</a></li>
+                             <li><a class="dropdown-item" href="">Total de padres</a></li>
+                             <li><a class="dropdown-item" href="#">Asignar un estudiante a un padre</a></li>
+                             <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
+                                     padre</a></li>
+
+                         </ul>
+
+
+
+                     </li>
+                     <li class="nav-item dropdown dropdown-hover">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                             data-bs-toggle="dropdown" aria-expanded="false">
+                             Profesores
+                         </a>
+                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <li><a class="dropdown-item" href="">Editar profesores</a></li>
+                             <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                             <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+                         </ul>
+
+
+
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
+                             inactivos</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="#">Crear nuevo administrador</a>
+                     </li>
+                 </ul>
+             </div>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <!-- Aquí van los elementos del navbar -->
+                 </ul>
+                 <ul class="navbar-nav">
+                     <li class="nav-item">
+                         <button class="btn btn-outline-danger" name="cerrarSesion" type="button"
+                             onclick="cerrarSesion()">Cerrar
+                             Sesión</button>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+
+     </nav>
+     </header>
+
+
+
+
+    <!-- Aquí va el contenido principal de la página -->
+    <div class="container mt-4">
+        <h1>Bienvenido al Panel de Administrador</h1>
+        <p>Esta es la página de inicio del panel de administrador.</p>
+    </div>
+
+    <!-- Encabezado de la página -->
+    <header class="bg-primary py-3 mb-5">
+        <div class="container">
+            <h1 class="text-white">Reporte</h1>
+        </div>
+    </header>
+
+    <!-- Contenido del reporte -->
+    <div class="container">
+        <div class="row">
+            <!-- Total de docentes -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Docentes</h2>
+                        <p class="card-text">Total: 50</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total de estudiantes -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Estudiantes</h2>
+                        <p class="card-text">Total: 500</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total de padres de familia -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Padres de familia</h2>
+                        <p class="card-text">Total: 200</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <hr>
+
+        
+</body>
+
+<!-- Agregamos el JS de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
