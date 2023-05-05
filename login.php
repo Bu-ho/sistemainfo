@@ -30,8 +30,8 @@ if(isset($_POST['Ndocumento'], $_POST['Contrasena'], $_POST['t_u'])) {
               location.href = "AdUV.php";
             } else if ("' . $t_p . '" == "Empleado" || "' . $t_p . '" == "empleado") {
               location.href = "EditE.php";
-            } else if ("' . $t_p . '" == "Cliente" || "' . $t_p . '" == "cliente") {
-              location.href = "EditU.php";
+            } else if ("' . $t_p . '" == "3" ) {
+              location.href = "admin.html";
             }
           }
         });

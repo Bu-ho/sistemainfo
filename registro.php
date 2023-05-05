@@ -120,8 +120,8 @@
                                     $resultado = mysqli_query($con, $query);
 
                                     while ($row = mysqli_fetch_array($resultado)) {
-                                        $id_tipo = $row['id_estrato'];
-                                        $tipo = $row['estrato'];
+                                        $id_tipo = $row['id'];
+                                        $tipo = $row['nombre'];
                                         echo "<option value='$id_tipo'>$tipo</option>";
                                     }
                                     ?>
@@ -139,8 +139,8 @@
                                     $resultado = mysqli_query($con, $query);
 
                                     while ($row = mysqli_fetch_array($resultado)) {
-                                        $id_tipo = $row['id_eps'];
-                                        $tipo = $row['nombre_eps'];
+                                        $id_tipo = $row['id'];
+                                        $tipo = $row['nombre'];
                                         echo "<option value='$id_tipo'>$tipo</option>";
                                     }
                                     ?>
@@ -179,7 +179,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="telefono" class="p-2">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
                         </div>
 
 
@@ -197,8 +197,8 @@
                                 $resultado = mysqli_query($con, $query);
 
                                 while ($row = mysqli_fetch_array($resultado)) {
-                                    $id_tipo = $row['id_u'];
-                                    $tipo = $row['nombre_u'];
+                                    $id_tipo = $row['id'];
+                                    $tipo = $row['Nombre'];
                                     echo "<option value='$id_tipo'>$tipo</option>";
                                 }
                                 ?>

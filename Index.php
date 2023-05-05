@@ -75,8 +75,8 @@ require_once('conexion.php');
                                 $resultado = mysqli_query($con, $query);
 
                                 while ($row = mysqli_fetch_array($resultado)) {
-                                    $id_tipo = $row['id_u'];
-                                    $tipo = $row['nombre_u'];
+                                    $id_tipo = $row['id'];
+                                    $tipo = $row['Nombre'];
                                     echo "<option value='$id_tipo'>$tipo</option>";
                                 }
                                 ?>

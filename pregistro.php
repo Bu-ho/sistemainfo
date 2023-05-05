@@ -25,9 +25,12 @@ if (isset($_POST['numero_documento'])) {
   $correo = $_POST['correo_electronico'];
   $tel = $_POST['telefono'];
   $contrasena = $_POST['contrasena'];
+  $fecha_registro = date("Y-m-d");
 
+  echo $fecha_registro = date("Y-m-d");
+  echo $t_documento = $_POST['tipo_documento'];
 
-  if ($_POST['id_tipo_usu'] == 2) {
+  if ($_POST['id_tipo_usu'] == 3) {
 
     $query = "SELECT * FROM estudiantes WHERE numero_identificacion='$Ndocumento'";
     $resulta = mysqli_query($con, $query);
@@ -50,8 +53,8 @@ if (isset($_POST['numero_documento'])) {
       </script>';
       exit;
     } else {
-      $consulta = "INSERT INTO estudiantes (numero_identificacion, nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo, direccion_residencia, tipo_documento, grado_cursar, grupo, fecha_ingreso, t_usuario, id_padres, alergias, enfermedades, estado_estudiante, EPS, Estrato, contrasena) 
-VALUES ('$Ndocumento', '$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', NULL, NULL, CURRENT_DATE(), '$rol', NULL, '$alergia', '$enfermedad', 'Activo', '$eps', '$estrato','$contrasena')";
+      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades, eps_id, estrato_id, telefono,correo, contrasena) 
+VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);
       if ($result2) {
