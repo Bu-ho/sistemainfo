@@ -53,8 +53,8 @@ if (isset($_POST['numero_documento'])) {
       </script>';
       exit;
     } else {
-      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades, eps_id, estrato_id, telefono,correo, contrasena) 
-VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
+      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps_id, estrato_id, telefono,correo, contrasena) 
+VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','1', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);
       if ($result2) {

@@ -93,7 +93,7 @@
 
                                 while ($row = mysqli_fetch_array($resultado)) {
                                     $id_tipo = $row['id'];
-                                    $tipo = $row['sexo'];
+                                    $tipo = $row['N_sexo'];
                                     echo "<option value='$id_tipo'>$tipo</option>";
                                 }
                                 ?>

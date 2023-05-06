@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 
 require_once("conexion.php");
 session_start();
@@ -9,12 +12,16 @@ if (!isset($_SESSION['Ndocumento'])) {
     $con = conectar();
     $Ndocumento = $_SESSION['Ndocumento'];
 
+    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e, 
+        FROM estudiantes 
+        JOIN eps ON estudiantes.eps_id = eps.id
+         JOIN sexo ON estudiantes.sexo_e = sexo.id
+         JOIN grupo ON estudiantes.grupo = grupo.id_grupo
+        JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo 
+         JOIN estados_estudiantes ON estudiantes.estado_estudiante = estados_estudiantes.id_estado
+        WHERE estudiantes.numero_identificacion = '$Ndocumento'";
 
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, sexo.N_sexo as sexo_e FROM estudiantes 
-            JOIN eps ON estudiantes.eps_id = eps.id 
-            JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo 
-            JOIN sexo ON estudiantes.sexo_e = sexo.id
-            WHERE estudiantes.numero_identificacion = '$Ndocumento'";
+
     $resul = mysqli_query($con, $sql);
 
 
