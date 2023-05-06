@@ -99,8 +99,8 @@ require_once("mostrarDatosEstu.php");
                         <input type="text" value="<?php echo $cod8; ?>" class=" form-control rounded-pill border-0 border-bottom border-secondary" id="numero_documento" name="numero_documento">
                     </div>
                     <div class="col-md-6 movi">
-                        <label for="sexo" class="form-label">Padre de familia:</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
+                        <label for="" class="form-label">Padre de familia:</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="" name="" required>
                             <option value="" selected>Seleccione una opción</option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
@@ -127,8 +127,8 @@ require_once("mostrarDatosEstu.php");
                         <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento" required title="Ingrese la fecha de nacimiento">
                     </div>
                     <div class="col-md-6 movi">
-                        <label for="sexo" class="form-label"></label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
+                        <label for="" class="form-label">Tipo de documento</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="" name="" required>
                             <option value="" selected><?php echo $cod7 ?></option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
@@ -158,8 +158,8 @@ require_once("mostrarDatosEstu.php");
                 <div class="row mb-3">
 
                     <div class="col-md-6">
-                        <label for="sexo" class="form-label">Estado</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
+                        <label for="" class="form-label">Estado</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="" name="" required>
                             <option value="" selected>Seleccione una opción</option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
@@ -167,17 +167,17 @@ require_once("mostrarDatosEstu.php");
                         </select>
                     </div>
                     <div class="col-md-6 movi">
-                        <label for="sexo" class="form-label">Grupo</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
-                            <option value="" selected>Seleccione una opción</option>
+                        <label for="" class="form-label">Grupo</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="" name="" required>
+                            <option value="" selected><?php echo $cod9 ?> </option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
                             <option value="3">Otro</option>
                         </select>
                     </div>
                     <div class="col-md-6  mb-3">
-                        <label for="sexo" class="form-label">Estrato</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
+                        <label for="" class="form-label">Estrato</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="" name="" required>
                             <option value="" selected>Seleccione una opción</option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
@@ -185,9 +185,9 @@ require_once("mostrarDatosEstu.php");
                         </select>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="sexo" class="form-label">Eps</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
-                            <option value="" selected><?php echo $cod15?></option>
+                        <label for="" class="form-label">Eps</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="" name="" required>
+                            <option value="" selected><?php echo $cod15 ?></option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
                             <option value="3">Otro</option>
@@ -195,9 +195,9 @@ require_once("mostrarDatosEstu.php");
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label for="sexo" class="form-label">Tipo de documento</label>
+                        <label for="sexo" class="form-label">Sexo</label>
                         <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
-                            <option value="" selected>Seleccione una opción</option>
+                            <option> <?php $cod5 ?> </option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
                             <option value="3">Otro</option>

@@ -9,12 +9,14 @@ if (!isset($_SESSION['Ndocumento'])) {
     $con = conectar();
     $Ndocumento = $_SESSION['Ndocumento'];
 
-    
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento FROM estudiantes 
+
+    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, sexo.N_sexo FROM estudiantes 
             JOIN eps ON estudiantes.eps_id = eps.id 
             JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo 
-            WHERE numero_identificacion = '$Ndocumento'";
+            JOIN sexo ON estudiantes.sexo = sexo.id
+            WHERE estudiantes.numero_identificacion = '$Ndocumento'";
     $resul = mysqli_query($con, $sql);
+
 
     // Verificar si se encontraron resultados
     if (mysqli_num_rows($resul) > 0) {
