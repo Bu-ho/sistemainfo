@@ -3,7 +3,6 @@
 require_once('conexion.php');
 
 
-
 ?>
 
 <!DOCTYPE html>
