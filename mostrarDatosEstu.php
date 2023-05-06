@@ -12,7 +12,7 @@ if (!isset($_SESSION['Ndocumento'])) {
     $con = conectar();
     $Ndocumento = $_SESSION['Ndocumento'];
 
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e, 
+    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e,  grupo.N_grupo as grupo
         FROM estudiantes 
         JOIN eps ON estudiantes.eps_id = eps.id
          JOIN sexo ON estudiantes.sexo_e = sexo.id

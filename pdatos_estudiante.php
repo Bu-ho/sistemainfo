@@ -139,7 +139,7 @@ require_once("mostrarDatosEstu.php");
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="direccion_residencia" class="form-label">Dirección de residencia:</label>
-                        <input type="text" value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" id="apellido_completo_estudiante" name="apellido_completo_estudiante" placeholder="Ingrese el apellido completo" required title="Ingrese el apellido completo">
+                        <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" id="apellido_completo_estudiante" name="apellido_completo_estudiante" placeholder="Ingrese el apellido completo" required title="Ingrese el apellido completo">
 
                     </div>
 
@@ -207,7 +207,7 @@ require_once("mostrarDatosEstu.php");
 
                     <div class="col-md-6 mb-3">
                         <label for="contrasena" class="form-label">Fecha de ingreso</label>
-                        <input type="password" class="form-control rounded-pill border-0 border-bottom border-secondary" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required title="Ingrese su contraseña">
+                        <input type="text" class="form-control rounded-pill border-0 border-bottom  border-secondary" value="<?php echo $cod10 ?>" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required title="Ingrese su contraseña">
                     </div>
                 </div>
 
