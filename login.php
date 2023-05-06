@@ -1,4 +1,5 @@
 <?php
+session_start()"juan";
 
 require_once("index.php");
 require_once("conexion.php");

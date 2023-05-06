@@ -45,60 +45,62 @@ require_once('conexion.php');
 <body>
 
 
-    <div class="container rounded">
-        <div class="row justify-content-center align-items-center vh-100">
-            <div class="col-md-8 col-lg-6 col-xl-5">
-                <div class="card shadow-lg border-0 rounded-3" style="background-color: #f8f9fa;">
-                    <div class="">
-                        <h3 class="text-center my-4" style="color: #495057;">Inicio de sesión</h3>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="login.php">
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="inputuser" name="Ndocumento" type="text" placeholder="usuario" style="background-color: #f2f2f2; color: #495057;" />
-                                <label for="inputuser" style="padding: 10px; color: #495057;">Documento</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="inputPassword" name="Contrasena" type="password" placeholder="Contraseña" style="background-color: #f2f2f2; color: #495057;" />
-                                <label for="inputPassword" style="padding: 10px; color: #495057;">Contraseña</label>
-                            </div>
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-lg border-0 rounded-3" style="background-color: #f8f9fa;">
+                <div class="">
+                    <h3 class="text-center my-4" style="color: #495057;">Inicio de sesión</h3>
+                </div>
+
+                <div class="card-body">
+                    <form method="POST" action="login.php">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputuser" name="Ndocumento" type="text" placeholder="usuario" style="background-color: #f2f2f2; color: #495057;" />
+                            <label for="inputuser" style="padding: 10px; color: #495057;">Documento</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputPassword" name="Contrasena" type="password" placeholder="Contraseña" style="background-color: #f2f2f2; color: #495057;" />
+                            <label for="inputPassword" style="padding: 10px; color: #495057;">Contraseña</label>
+                        </div>
 
 
-                            <select class="form-select form-control" id="inputUser" name="t_u" style="background-color: #f2f2f2; color: #495057;">
+                        <select class="form-select form-control" id="inputUser" name="t_u" style="background-color: #f2f2f2; color: #495057;">
 
-                                <option class="pb-3">Tipo de usuario</option>
-                                <?php
-                                require_once('conexion.php');
-                                $con = conectar();
+                            <option class="pb-3">Tipo de usuario</option>
+                            <?php
+                            require_once('conexion.php');
+                            $con = conectar();
 
-                                $query = "SELECT * FROM tipo_usuario";
-                                $resultado = mysqli_query($con, $query);
+                            $query = "SELECT * FROM tipo_usuario";
+                            $resultado = mysqli_query($con, $query);
 
-                                while ($row = mysqli_fetch_array($resultado)) {
-                                    $id_tipo = $row['id'];
-                                    $tipo = $row['Nombre'];
-                                    echo "<option value='$id_tipo'>$tipo</option>";
-                                }
-                                ?>
-                            </select>
+                            while ($row = mysqli_fetch_array($resultado)) {
+                                $id_tipo = $row['id'];
+                                $tipo = $row['Nombre'];
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                                
+                            }
+                            ?>
+                        </select>
 
-                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                <a class="small colora2" href="#" style=" color: #6c757d; ">¿Olvidaste tu contraseña?</a>
-                                <button type="submit" class="btn hov1" style="background-color: #16df7e; color:aliceblue;">Iniciar sesión</button>
-                            </div>
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <a class="small colora2" href="#" style=" color: #6c757d; ">¿Olvidaste tu contraseña?</a>
+                            <button type="submit" class="btn hov1" style="background-color: #16df7e; color:aliceblue;">Iniciar sesión</button>
+                        </div>
 
 
 
 
-                        </form>
+                    </form>
 
-                    </div>
-                    <div class="card-footer text-center py-3">
-                        <div class="small "><a href="registro.php" class=" colora" style="color: #6c757d;">¿Necesitas una cuenta? Regístrate aquí.</a></div>
-                    </div>
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small "><a href="registro.php" class=" colora" style="color: #6c757d;">¿Necesitas una cuenta? Regístrate aquí.</a></div>
                 </div>
             </div>
         </div>
+       
+    </div>
     </div>
 
 
