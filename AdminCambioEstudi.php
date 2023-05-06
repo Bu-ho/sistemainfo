@@ -26,7 +26,7 @@ require_once("mostrarDatosEstu.php");
         }
 
 
-        .input-group-append button {
+        .input-group-append input {
             left: 20px;
         }
 
@@ -77,17 +77,19 @@ require_once("mostrarDatosEstu.php");
                         <img src="img/logo.png" alt="Descripción de la imagen">
                     </div>
 
-                    <div class="input-group buscador mt-5 mb-3">
-                        <input type="search" class="form-control rounded-pill  border-0 border-bottom border-secondary" id="buscador" placeholder="Buscar...">
+                    <form action="BDB.php" method="post">
+                        <div class="input-group buscador mt-5 mb-3">
+                            <input type="search" class="form-control rounded-pill  border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
 
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary rounded-pill mr-3" type="button" id="boton-buscar"><i class="bi bi-search "></i> Buscar</button>
-                            <button class="btn btn-outline-success rounded-pill mr-3" type="button" id="boton-editar"><i class="bi bi-pencil"></i> Editar</button>
-                            <button class="btn btn-outline-danger rounded-pill mr-3" type="button" id="boton-eliminar"><i class="bi bi-trash"></i> Eliminar</button>
+                            <div class="input-group-append">
+
+                                <input type="submit" class="btn btn-outline-primary rounded-pill mr-3" value="Buscar" name="BTNbuscar">
+                                <input type="submit" class="btn btn-outline-success rounded-pill mr-3" value="Editar" name="BTNeditar">
+                                <input type="submit" class="btn btn-outline-danger rounded-pill mr-3" value="Eliminar" name="BTNborrar">
+                            </div>
                         </div>
-                    </div>
 
-
+                    </form>
 
 
 

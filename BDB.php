@@ -1,16 +1,15 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
+require_once("php/conexion.php");
+
+$con = conectar();
+
+if (isset($_POST["BTNbuscar"])) {
 
 
-require_once("conexion.php");
-session_start();
 
-if (!isset($_SESSION['Ndocumento'])) {
-    echo "Debe iniciar sesión para ver sus datos";
-} else {
-    $con = conectar();
-    $Ndocumento = $_SESSION['Ndocumento'];
+    $Ndocumento = $_POST["Bdocu"];
+
 
     $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e,  grupo.N_grupo as grupo, estratos.nombre as estrato_id
         FROM estudiantes 
@@ -21,15 +20,11 @@ if (!isset($_SESSION['Ndocumento'])) {
         JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo 
          JOIN estados_estudiantes ON estudiantes.estado_estudiante = estados_estudiantes.id_estado
         WHERE estudiantes.numero_identificacion = '$Ndocumento'";
-
-
     $resul = mysqli_query($con, $sql);
 
-
-    // Verificar si se encontraron resultados
     if (mysqli_num_rows($resul) > 0) {
-        $row = mysqli_fetch_assoc($resul);
-
+        // Si se encontró un registro en la base de datos, mostrar información del usuario
+        $row = mysqli_fetch_array($resul);
 
         $cod1 = $row["id_estudiante"];
         $cod2 = $row["nombre_completo_estudiante"];
@@ -52,8 +47,23 @@ if (!isset($_SESSION['Ndocumento'])) {
         $cod19 = $row["contrasena"];
         $cod20 = $row["id_padres"];
     } else {
-        echo "No se encontraron datos del estudiante";
+
+echo '<p class="texto-invi"></p>';
+
+echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+echo '<script>
+    Swal.fire({
+      title: "Error",
+      text: "No se encontró ningún registro con el número de documento proporcionado",
+      icon: "error",
+      willClose: () => {
+         location.href = "AdUV.php"; 
+      }
+    });
+</script>';
+
     }
 
-    mysqli_close($con);
+    if (isset($_POST["BTNbuscar"])) {
+    }
 }
