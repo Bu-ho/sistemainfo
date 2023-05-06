@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-05-2023 a las 19:42:32
+-- Tiempo de generación: 06-05-2023 a las 20:07:59
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -123,7 +123,7 @@ CREATE TABLE `estudiantes` (
   `nombre_completo_estudiante` varchar(50) NOT NULL,
   `apellido_completo_estudiante` varchar(50) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
-  `sexo` int(1) NOT NULL,
+  `sexo_e` int(1) NOT NULL,
   `direccion_residencia` varchar(255) NOT NULL,
   `tipo_documento` int(1) NOT NULL,
   `numero_identificacion` int(10) DEFAULT NULL,
@@ -145,7 +145,7 @@ CREATE TABLE `estudiantes` (
 -- Volcado de datos para la tabla `estudiantes`
 --
 
-INSERT INTO `estudiantes` (`id_estudiante`, `nombre_completo_estudiante`, `apellido_completo_estudiante`, `fecha_nacimiento`, `sexo`, `direccion_residencia`, `tipo_documento`, `numero_identificacion`, `grupo`, `fecha_ingreso`, `t_usuario`, `alergias`, `enfermedades`, `estado_estudiante`, `eps_id`, `estrato_id`, `telefono`, `correo`, `contrasena`, `id_padres`) VALUES
+INSERT INTO `estudiantes` (`id_estudiante`, `nombre_completo_estudiante`, `apellido_completo_estudiante`, `fecha_nacimiento`, `sexo_e`, `direccion_residencia`, `tipo_documento`, `numero_identificacion`, `grupo`, `fecha_ingreso`, `t_usuario`, `alergias`, `enfermedades`, `estado_estudiante`, `eps_id`, `estrato_id`, `telefono`, `correo`, `contrasena`, `id_padres`) VALUES
 (1, 'jeison Orlando', 'Restrepo Zapata', '2023-05-04', 1, 'Carrera 14', 1, 1042150069, 0, '0000-00-00', 3, 'ninguna', 'ninguna', NULL, 19, 1, 2147483647, 'orlandoyeison1996@gmail.com', '123', 0),
 (2, '1', '1', '2023-06-10', 2, '1', 1, 1, 0, '2023-05-05', 3, 'ninguna', 'ninguna', NULL, 14, 3, 1, 'orlandoyeison1996@gmail.com', '1', 0),
 (3, '14', '14', '2023-05-25', 2, 'car21', 1, 14, 0, '2023-05-05', 3, 'ninguna', 'ninguna', NULL, 16, 5, 2147483647, 'orlandoyeison1996@gmail.com', '14', 0);
@@ -301,7 +301,7 @@ ALTER TABLE `estratos`
 --
 ALTER TABLE `estudiantes`
   ADD PRIMARY KEY (`id_estudiante`),
-  ADD KEY `sexo` (`sexo`),
+  ADD KEY `sexo` (`sexo_e`),
   ADD KEY `estado_estudiante` (`estado_estudiante`),
   ADD KEY `t_usuario` (`t_usuario`),
   ADD KEY `tipo_documento` (`tipo_documento`),
@@ -404,6 +404,7 @@ ALTER TABLE `tipo_usuario`
 ALTER TABLE `estudiantes`
   ADD CONSTRAINT `estudiantes_ibfk_10` FOREIGN KEY (`tipo_documento`) REFERENCES `tipos_documento` (`id_tipo`),
   ADD CONSTRAINT `estudiantes_ibfk_11` FOREIGN KEY (`t_usuario`) REFERENCES `tipo_usuario` (`id`),
+  ADD CONSTRAINT `estudiantes_ibfk_12` FOREIGN KEY (`sexo_e`) REFERENCES `sexo` (`id`),
   ADD CONSTRAINT `estudiantes_ibfk_7` FOREIGN KEY (`eps_id`) REFERENCES `eps` (`id`),
   ADD CONSTRAINT `estudiantes_ibfk_8` FOREIGN KEY (`estado_estudiante`) REFERENCES `estados_estudiantes` (`id_estado`),
   ADD CONSTRAINT `fk_eps` FOREIGN KEY (`estrato_id`) REFERENCES `estratos` (`id`);

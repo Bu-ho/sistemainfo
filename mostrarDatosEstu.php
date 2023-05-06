@@ -10,10 +10,10 @@ if (!isset($_SESSION['Ndocumento'])) {
     $Ndocumento = $_SESSION['Ndocumento'];
 
 
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, sexo.N_sexo FROM estudiantes 
+    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, sexo.N_sexo as sexo_e FROM estudiantes 
             JOIN eps ON estudiantes.eps_id = eps.id 
             JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo 
-            JOIN sexo ON estudiantes.sexo = sexo.id
+            JOIN sexo ON estudiantes.sexo_e = sexo.id
             WHERE estudiantes.numero_identificacion = '$Ndocumento'";
     $resul = mysqli_query($con, $sql);
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['Ndocumento'])) {
         $cod2 = $row["nombre_completo_estudiante"];
         $cod3 = $row["apellido_completo_estudiante"];
         $cod4 = $row["fecha_nacimiento"];
-        $cod5 = $row["sexo"];
+        $cod5 = $row["sexo_e"];
         $cod6 = $row["direccion_residencia"];
         $cod7 = $row["tipo_documento"];
         $cod8 = $row["numero_identificacion"];
@@ -37,7 +37,7 @@ if (!isset($_SESSION['Ndocumento'])) {
         $cod12 = $row["alergias"];
         $cod13 = $row["enfermedades"];
         $cod14 = $row["estado_estudiante"];
-        $cod15 = $row["eps_id"];
+        $cod15 = $row["nombre_eps"];
         $cod16 = $row["estrato_id"];
         $cod17 = $row["telefono"];
         $cod18 = $row["correo"];

@@ -197,7 +197,7 @@ require_once("mostrarDatosEstu.php");
                     <div class="col-md-6 mb-3">
                         <label for="sexo" class="form-label">Sexo</label>
                         <select class="form-select rounded-pill border-0 border-bottom border-secondary" id="sexo" name="sexo" required>
-                            <option> <?php $cod5 ?> </option>
+                            <option> <?php $cod5 ?></option>
                             <option value="1">Masculino</option>
                             <option value="2">Femenino</option>
                             <option value="3">Otro</option>
