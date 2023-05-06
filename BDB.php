@@ -1,11 +1,11 @@
 <?php
 
-require_once("php/conexion.php");
 
-$con = conectar();
 
 if (isset($_POST["BTNbuscar"])) {
+    require_once("conexion.php");
 
+    $con = conectar();
 
 
     $Ndocumento = $_POST["Bdocu"];
@@ -48,22 +48,57 @@ if (isset($_POST["BTNbuscar"])) {
         $cod20 = $row["id_padres"];
     } else {
 
-echo '<p class="texto-invi"></p>';
+        echo '<p class="texto-invi"></p>';
 
-echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-echo '<script>
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+        echo '<script>
     Swal.fire({
       title: "Error",
       text: "No se encontró ningún registro con el número de documento proporcionado",
       icon: "error",
       willClose: () => {
-         location.href = "AdUV.php"; 
+         location.href = ""; 
       }
     });
 </script>';
-
-    }
-
-    if (isset($_POST["BTNbuscar"])) {
     }
 }
+
+
+
+    if (isset($_POST['BTNcambio'])) {
+        include_once("conexion.php");
+        $con = conectar();
+
+
+        $cod2 = $_POST["nombre_completo_estudiante"];
+        $cod8 = $_POST["numero_documento"];
+     
+
+        $Consulta = "UPDATE estudiantes SET nombre_completo_estudiante='$cod2' WHERE numero_identificacion='$cod8';";
+
+
+        $result = mysqli_query($con, $Consulta);
+
+        if ($result == 0) {
+            mysqli_close($con);
+            exit;
+        }
+
+
+    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+    echo "<script>
+Swal.fire({
+  title: 'Usuario actualizado correctamente!',
+  text: 'Presione el botón!',
+  icon: 'success',
+}).then(function() {
+  window.location.href = 'AdUV.php';  
+});
+</script>";
+
+
+        mysqli_close($con);
+        exit;
+    }
+
