@@ -153,7 +153,7 @@ INSERT INTO `estudiantes` (`id_estudiante`, `nombre_completo_estudiante`, `apell
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `grupo`
+-- Estructura de tabla para la tabla `grupo`a
 --
 
 CREATE TABLE `grupo` (
