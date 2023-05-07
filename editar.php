@@ -1,6 +1,6 @@
 <?php
 
-require_once("BDB.PHP");
+
 
 if($_post)
 
@@ -69,15 +69,13 @@ mysqli_close($con);
 exit;
 }
 
-echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-echo "<script>
-    Swal.fire({
-        title: 'Usuario actualizado correctamente!',
-        text: 'Presione el botón!',
-        icon: 'success',
-    }).then(function() {
-        window.location.href = 'AdUV.php';
-    });
+    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+    echo " <script>
+    Swal.fire(
+        'Eliminación exitosa!',
+        'El usuario ha sido eliminado.',
+        'success'
+    )
 </script>";
 
 

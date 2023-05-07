@@ -1,17 +1,10 @@
 <?php
 
 
-require_once("AdminCambioEstudi.php");
-
 if (isset($_POST["BTNbuscar"])) {
     require_once("conexion.php");
-
     $con = conectar();
-
-
     $Ndocumento = $_POST["Bdocu"];
-
-
     $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e,  grupo.N_grupo as grupo, estratos.nombre as estrato_id
         FROM estudiantes 
         JOIN estratos ON estudiantes.estrato_id = estratos.id
@@ -22,11 +15,9 @@ if (isset($_POST["BTNbuscar"])) {
          JOIN estados_estudiantes ON estudiantes.estado_estudiante = estados_estudiantes.id_estado
         WHERE estudiantes.numero_identificacion = '$Ndocumento'";
     $resul = mysqli_query($con, $sql);
-
     if (mysqli_num_rows($resul) > 0) {
         // Si se encontró un registro en la base de datos, mostrar información del usuario
         $row = mysqli_fetch_array($resul);
-
         $cod1 = $row["id_estudiante"];
         $cod2 = $row["nombre_completo_estudiante"];
         $cod3 = $row["apellido_completo_estudiante"];
@@ -47,61 +38,22 @@ if (isset($_POST["BTNbuscar"])) {
         $cod18 = $row["correo"];
         $cod19 = $row["contrasena"];
         $cod20 = $row["id_padres"];
+        // Mostrar información del usuario aquí
     } else {
-
+        // Si no se encontró ningún registro en la base de datos, mostrar un mensaje de error
         echo '<p class="texto-invi"></p>';
-
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
         echo '<script>
-    Swal.fire({
-      title: "Error",
-      text: "No se encontró ningún registro con el número de documento proporcionado",
-      icon: "error",
-      willClose: () => {
-         location.href = ""; 
-      }
-    });
-</script>';
+            Swal.fire({
+              title: "Error",
+              text: "No se encontró ningún registro con el número de documento proporcionado",
+              icon: "error",
+              willClose: () => {
+                 location.href = ""; 
+              }
+            });
+        </script>';
+        // También puedes agregar un return aquí para salir de la función y evitar que se muestren más resultados
+        return;
     }
 }
-
-
-
-    if (isset($_POST['BTNcambio'])) {
-        include_once("conexion.php");
-        $con = conectar();
-
-
-        $cod2 = $_POST["nombre_completo_estudiante"];
-        $cod8 = $_POST["numero_documento"];
-     
-
-        $Consulta = "UPDATE estudiantes SET nombre_completo_estudiante='$cod2' WHERE numero_identificacion='$cod8';";
-
-
-        $result = mysqli_query($con, $Consulta);
-
-        if ($result == 0) {
-            mysqli_close($con);
-            exit;
-        }
-
-
-    echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-    echo "<script>
-Swal.fire({
-  title: 'Usuario actualizado correctamente!',
-  text: 'Presione el botón!',
-  icon: 'success',
-}).then(function() {
-  setTimeout(function(){
-    window.location.href = 'AdUV.php';
-  }, 1000);
-});
-</script>";
-
-
-        mysqli_close($con);
-        exit;
-    }
-

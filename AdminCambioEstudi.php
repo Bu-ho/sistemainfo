@@ -1,5 +1,5 @@
 <?php
-require_once("BDB.PHP");
+require("pueba.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@ require_once("BDB.PHP");
         }
     </style>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
 
@@ -69,7 +69,7 @@ require_once("BDB.PHP");
                     <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los estudiantes</h1>
                     <img src="img/logo.png" alt="Descripción de la imagen">
                 </div>
-                <form action="BDB.php" method="post">
+                <form action="" method="post">
                     <div class="input-group buscador mt-5 mb-3">
                         <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
                         <div class="input-group-append">
@@ -82,11 +82,12 @@ require_once("BDB.PHP");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="numero_documento" class="form-label">Número de documento:</label>
-                    <input type="text" value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento">
+                    <input type="text" value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Padre de familia:</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="id_padre_familia">
+                        <option selected><?php echo $cod7 ?></option>
                         <?php
                         require_once('conexion.php');
                         $con = conectar();
@@ -95,8 +96,11 @@ require_once("BDB.PHP");
                         while ($row = mysqli_fetch_array($resultado)) {
                             $id_tipo = $row['id_padres'];
                             $tipo = $row['numero_identificacion'];
-                            $selected = $cod20 == $id_tipo ? 'selected' : '';
-                            echo "<option value='$id_tipo' $selected>$tipo</option>";
+                            if ($id_tipo == $cod14) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
                         }
                         ?>
                     </select>
@@ -123,20 +127,23 @@ require_once("BDB.PHP");
                 <div class="col-md-6 movi">
                     <label class="form-label">Tipo de documento</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
-                        <option selected><?php echo $cod7 ?></option>
+
                         <?php
                         require_once('conexion.php');
                         $con = conectar();
-
                         $query = "SELECT * FROM tipos_documento";
                         $resultado = mysqli_query($con, $query);
-
                         while ($row = mysqli_fetch_array($resultado)) {
                             $id_tipo = $row['id_tipo'];
                             $tipo = $row['tipo'];
-                            echo "<option value='$id_tipo'>$tipo</option>";
+                            if ($id_tipo == $cod7) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
                         }
                         ?>
+
                     </select>
                 </div>
             </div>
@@ -163,48 +170,116 @@ require_once("BDB.PHP");
 
                 <div class="col-md-6">
                     <label class="form-label">Estado</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod14 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estado">
+                        <?php
+                        require_once('conexion.php');
+                        $con = conectar();
+
+                        $query = "SELECT * FROM estados_estudiantes";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id_estado'];
+                            $tipo = $row['estado'];
+                            if ($id_tipo == $cod14) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
+
                 <div class="col-md-6 movi">
                     <label class="form-label">Grupo</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod9 ?> </option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                        <?php
+                        require_once('conexion.php');
+                        $con = conectar();
+
+                        $query = "SELECT * FROM grupo";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id_grupo'];
+                            $tipo = $row['N_grupo'];
+                            if ($id_tipo == $cod9) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="col-md-6  mb-3">
                     <label class="form-label">Estrato</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod16 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                        <?php
+                        require_once('conexion.php');
+                        $con = conectar();
+
+                        $query = "SELECT * FROM estratos";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id'];
+                            $tipo = $row['nombre'];
+                            if ($id_tipo == $cod16) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Eps</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod15 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+
+                        <?php
+                        require_once('conexion.php');
+                        $con = conectar();
+
+                        $query = "SELECT * FROM eps";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id'];
+                            $tipo = $row['nombre'];
+                            if ($id_tipo == $cod15) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Sexo</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo">
-                        <option selected><?php echo $cod5 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                        
+                        <?php
+                        require_once('conexion.php');
+                        $con = conectar();
+
+                        $query = "SELECT * FROM sexo";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id'];
+                            $tipo = $row['N_sexo'];
+                            if ($id_tipo == $cod5) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
 
