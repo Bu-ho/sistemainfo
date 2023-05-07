@@ -1,5 +1,6 @@
 <?php
 
+require_once("BDB.PHP");
 
 if($_post)
 

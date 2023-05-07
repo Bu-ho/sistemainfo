@@ -1,6 +1,7 @@
 <?php
 
 
+require_once("AdminCambioEstudi.php");
 
 if (isset($_POST["BTNbuscar"])) {
     require_once("conexion.php");
@@ -93,7 +94,9 @@ Swal.fire({
   text: 'Presione el botón!',
   icon: 'success',
 }).then(function() {
-  window.location.href = 'AdUV.php';  
+  setTimeout(function(){
+    window.location.href = 'AdUV.php';
+  }, 1000);
 });
 </script>";
 

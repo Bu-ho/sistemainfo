@@ -1,4 +1,5 @@
-<?php require_once("BDB.PHP");
+<?php
+require_once("BDB.PHP");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +69,7 @@
                     <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los estudiantes</h1>
                     <img src="img/logo.png" alt="Descripción de la imagen">
                 </div>
-                <form action="" method="post">
+                <form action="BDB.php" method="post">
                     <div class="input-group buscador mt-5 mb-3">
                         <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
                         <div class="input-group-append">
