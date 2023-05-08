@@ -53,7 +53,71 @@ if (isset($_POST['numero_documento'])) {
       </script>';
       exit;
     } else {
-      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps_id, estrato_id, telefono,correo, contrasena) 
+      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps_id, estrato_id, telefono,correo, contrasena,id_estudiante) 
+VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','1', '$eps', '$estrato', '$tel', '$correo', '$contrasena','')";
+
+      $result2 = mysqli_query($con, $consulta);
+      if ($result2) {
+        mysqli_close($con);
+        echo '<p class="texto-invi">`</p>';
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+        echo '<script>
+        Swal.fire({
+          icon: "success",
+          title: "¡Éxito!",
+          text: "Usuario creado exitosamente",
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+          willClose: () => {
+            location.href = "index.php";
+          }
+        });
+      </script>';
+        exit;
+      } else {
+        mysqli_close($con);
+        echo '<p class="texto-invi">`</p>';
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+        echo '<script>
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Hubo un error al crear el usuario",
+          showConfirmButton: true,
+          willClose: () => {
+            location.href = "index.php";
+          }
+        });
+      </script>';
+        exit;
+      }
+    }
+  }
+  if ($_POST['id_tipo_usu'] == 4) {
+
+    $query = "SELECT * FROM padres_familia WHERE numero_identificacion='$Ndocumento'";
+    $resulta = mysqli_query($con, $query);
+
+    if (mysqli_num_rows($resulta) > 0) {
+      mysqli_close($con);
+      echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+      echo '<p class="texto-invi">`</p>';
+      echo '<script>
+        Swal.fire({
+          icon: "error",
+          title: "Usuario existente",
+          text: "Ya existe un usuario con ese número de documento.",
+        }).then((result) => {
+          // Redirigir a la página de inicio
+          if (result.isConfirmed || result.isDismissed) {
+            window.location.href = "index.php";
+          }
+        });
+      </script>';
+      exit;
+    } else {
+      $consulta = "INSERT INTO padres_familia (nombre_completo_padre, apellido_completo_padre, fecha_nacimiento, sexo, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado, eps_id, estrato_id, telefono,correo, contrasena) 
 VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','1', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);

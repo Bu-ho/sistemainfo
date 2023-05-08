@@ -1,6 +1,6 @@
 <?php
 require_once("pueba.php");
-$cod6 = $_GET['Bdocu'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,21 +89,8 @@ $cod6 = $_GET['Bdocu'];
                     <label class="form-label">Padre de familia:</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="id_padre_familia">
                         <option selected><?php echo $cod7 ?></option>
-                        <?php
-                        require_once('conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM padres_familia";
-                        $resultado = mysqli_query($con, $query);
-                        while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id_padres'];
-                            $tipo = $row['numero_identificacion'];
-                            if ($id_tipo == $cod7) {
-                                echo "<option value='$id_tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$id_tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
+                       
+
                     </select>
                 </div>
 
@@ -129,21 +116,7 @@ $cod6 = $_GET['Bdocu'];
                     <label class="form-label">Tipo de documento</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
 
-                        <?php
-                        require_once('conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM tipos_documento";
-                        $resultado = mysqli_query($con, $query);
-                        while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id_tipo'];
-                            $tipo = $row['tipo'];
-                            if ($id_tipo == $cod7) {
-                                echo "<option value='$id_tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$id_tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
+                        
 
                     </select>
                 </div>
@@ -176,7 +149,7 @@ $cod6 = $_GET['Bdocu'];
                         require_once('conexion.php');
                         $con = conectar();
 
-                        $query = "SELECT * FROM estados_estudiantes";
+                        $query = "SELECT * FROM estados";
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
@@ -218,8 +191,7 @@ $cod6 = $_GET['Bdocu'];
                     <label class="form-label">Estrato</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
                         <?php
-                        require_once('conexion.php');
-                        $con = conectar();
+                      
 
                         $query = "SELECT * FROM estratos";
                         $resultado = mysqli_query($con, $query);
@@ -241,8 +213,7 @@ $cod6 = $_GET['Bdocu'];
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
 
                         <?php
-                        require_once('conexion.php');
-                        $con = conectar();
+                        
 
                         $query = "SELECT * FROM eps";
                         $resultado = mysqli_query($con, $query);
@@ -265,8 +236,7 @@ $cod6 = $_GET['Bdocu'];
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo">
                         
                         <?php
-                        require_once('conexion.php');
-                        $con = conectar();
+                     
 
                         $query = "SELECT * FROM sexo";
                         $resultado = mysqli_query($con, $query);

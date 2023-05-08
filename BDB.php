@@ -1,18 +1,17 @@
 <?php
 
-require_once("AdminCambioEstudi.php");
+
 if (isset($_POST["BTNbuscar"])) {
     require_once("conexion.php");
     $con = conectar();
-    $Ndocumento = $_GET["Bdocu"];
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e,  grupo.N_grupo as grupo, estratos.nombre as estrato_id
+    $Ndocumento = $_POST["Bdocu"];
+    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, sexo.N_sexo as sexo_e,  grupo.N_grupo as grupo, estratos.nombre as estrato_id
         FROM estudiantes 
         JOIN estratos ON estudiantes.estrato_id = estratos.id
         JOIN eps ON estudiantes.eps_id = eps.id
          JOIN sexo ON estudiantes.sexo_e = sexo.id
          JOIN grupo ON estudiantes.grupo = grupo.id_grupo
         JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo 
-         JOIN estados_estudiantes ON estudiantes.estado_estudiante = estados_estudiantes.id_estado
         WHERE estudiantes.numero_identificacion = '$Ndocumento'";
     $resul = mysqli_query($con, $sql);
     if (mysqli_num_rows($resul) > 0) {
@@ -53,7 +52,7 @@ if (isset($_POST["BTNbuscar"])) {
               }
             });
         </script>';
-        // También puedes agregar un return aquí para salir de la función y evitar que se muestren más resultados
+      
         return;
     }
 }

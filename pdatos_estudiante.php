@@ -84,15 +84,9 @@ require_once("mostrarDatosEstu.php");
                     <label class="form-label">Padre de familia:</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="id_padre_familia">
                         <?php
-                        
-                        $query = "SELECT * FROM padres_familia";
-                        $resultado = mysqli_query($con, $query);
-                        while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id_padres'];
-                            $tipo = $row['numero_identificacion'];
-                            $selected = $cod20 == $id_tipo ? 'selected' : '';
-                            echo "<option value='$id_tipo' $selected>$tipo</option>";
-                        }
+
+
+
                         ?>
                     </select>
                 </div>
@@ -112,25 +106,14 @@ require_once("mostrarDatosEstu.php");
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label class="form-label">Fecha de nacimiento:</label>
+                    <label class="form-label"><?php echo $cod8; ?></label>
                     <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Tipo de documento</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
                         <option selected><?php echo $cod7 ?></option>
-                        <?php
-                        
-
-                        $query = "SELECT * FROM tipos_documento";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id_tipo'];
-                            $tipo = $row['tipo'];
-                            echo "<option value='$id_tipo'>$tipo</option>";
-                        }
-                        ?>
+                       
                     </select>
                 </div>
             </div>
