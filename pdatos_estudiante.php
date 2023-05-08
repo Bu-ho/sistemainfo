@@ -86,25 +86,22 @@ require_once("mostrarDatosEstu.php");
                 <div class="col-md-6 movi">
                     <label class="form-label">Tipo de documento</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
-                        <option value=""><?php echo $cod7; ?></option>
-                        <?php
-                        require_once('conexion.php');
-                        $con = conectar();
-
-                        $query = "SELECT * FROM tipos_documento";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id_tipo'];
-                            $tipo = $row['tipo'];
-                            if ($id_tipo == $cod7) {
-                                echo "<option value='$id_tipo'selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$id_tipo'>$tipo</option>";
+                            <?php
+                            require_once('conexion.php');
+                            $con = conectar();
+                            $query = "SELECT * FROM tipos_documento";
+                            $resultado = mysqli_query($con, $query);
+                            while ($row = mysqli_fetch_array($resultado)) {
+                                $id_tipo = $row['id_tipo'];
+                                $tipo = $row['tipo'];
+                                if ($id_tipo == $cod16) {
+                                    echo "<option value='$id_tipo' selected>$tipo</option>";
+                                } else {
+                                    echo "<option value='$id_tipo'>$tipo</option>";
+                                }
                             }
-                        }
-                        ?>
-
+                            ?>
+                        </select>
                     </select>
                 </div>
 
@@ -178,21 +175,17 @@ require_once("mostrarDatosEstu.php");
                     <label class="form-label">Estrato</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estrato_id">
                         <?php
-
                         require_once('conexion.php');
                         $con = conectar();
                         $query = "SELECT * FROM estratos";
                         $resultado = mysqli_query($con, $query);
-
                         while ($row = mysqli_fetch_array($resultado)) {
                             $id_tipo = $row['id'];
                             $tipo = $row['nombre'];
-                            if ($id_tipo == $cod16) {
-                                echo "<option value='$id_tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$id_tipo'>$tipo</option>";
-                            }
+                            $selected = ($id_tipo == $cod16) ? 'selected' : '';
+                            echo "<option value='$id_tipo' $selected>$tipo</option>";
                         }
+
                         ?>
                     </select>
                 </div>

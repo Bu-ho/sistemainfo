@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 
 session_start();
 
@@ -28,27 +25,50 @@ if (isset($_SESSION['Ndocumento'])) {
 
 
         while ($row = mysqli_fetch_assoc($result)) {
-            // Asignar los valores a las variables
-            $cod1 = $row['id_estudiante'];
-            $cod2 = $row['nombre_completo_estudiante'];
-            $cod3 = $row['apellido_completo_estudiante'];
-            $cod4 = $row['fecha_nacimiento'];
-            $cod5 = $row['sexo_e'];
-            $cod6 = $row['direccion_residencia'];
-            $cod7 = $row['tipo_documento'];
-            $cod8 = $row['numero_identificacion'];
-            $cod9 = $row['grupo'];
-            $cod10 = $row['fecha_ingreso'];
-            $cod11 = $row['t_usuario'];
-            $cod12 = $row['alergias'];
-            $cod13 = $row['enfermedades'];
-            $cod14 = $row['estado_estudiante'];
-            $cod15 = $row['nombre_eps'];
-            $cod16 = $row['estrato_id'];
-            $cod17 = $row['telefono'];
-            $cod18 = $row['correo'];
-            $cod19 = $row['contrasena'];
-            $cod20 = $row['id_padres'];
+     
+            $a = "id_estudiante";
+            $b = "nombre_completo_estudiante";
+            $c = "apellido_completo_estudiante";
+            $d = "correo";
+            $e = "contrasena";
+            $f = "t_usuario";
+            $g = "fecha_nacimiento";
+            $h = "sexo_e";
+            $i = "direccion_residencia";
+            $j = "tipo_documento";
+            $k = "numero_identificacion";
+            $l = "grupo";
+            $m = "fecha_ingreso";
+            $n = "alergias";
+            $o = "enfermedades";
+            $p = "estado_estudiante";
+            $q = "nombre_eps";
+            $r = "estrato_id";
+            $s = "telefono";
+            $t = "id_padres";
+
+
+            $cod1 = $row[$a];
+            $cod2 = $row[$b];
+            $cod3 = $row[$c];
+            $cod4 = $row[$g];
+            $cod5 = $row[$h];
+            $cod6 = $row[$i];
+            $cod7 = $row[$j];
+            $cod8 = $row[$k];
+            $cod9 = $row[$l];
+            $cod10 = $row[$m];
+            $cod11 = $row[$f];
+            $cod12 = $row[$n];
+            $cod13 = $row[$o];
+            $cod14 = $row[$p];
+            $cod15 = $row[$q];
+            $cod16 = $row[$r];
+            $cod17 = $row[$s];
+            $cod18 = $row[$d];
+            $cod19 = $row[$e];
+            $cod20 = $row[$t];
+       
         }
     } else {
         echo "No se encontraron datos del estudiante";
@@ -56,6 +76,8 @@ if (isset($_SESSION['Ndocumento'])) {
 
     mysqli_close($con);
 }
+
+
 if (isset($_POST['BTNcambio'])) {
     include_once("conexion.php");
 
@@ -70,7 +92,6 @@ if (isset($_POST['BTNcambio'])) {
     $sexo_e = $_POST['sexo_e'];
     $direccion_residencia = $_POST['direccion_residencia'];
     $tipo_documento = $_POST['tipo_documento'];
-  
     $alergias = $_POST['alergias'];
     $enfermedades = $_POST['enfermedades'];
     $eps_id = $_POST['eps_id'];
