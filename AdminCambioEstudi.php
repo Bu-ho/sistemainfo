@@ -1,5 +1,6 @@
 <?php
-require("pueba.php");
+require_once("pueba.php");
+$cod6 = $_GET['Bdocu'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +83,7 @@ require("pueba.php");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="numero_documento" class="form-label">Número de documento:</label>
-                    <input type="text" value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
+                    <input type="text" value="<?php  echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Padre de familia:</label>
@@ -96,7 +97,7 @@ require("pueba.php");
                         while ($row = mysqli_fetch_array($resultado)) {
                             $id_tipo = $row['id_padres'];
                             $tipo = $row['numero_identificacion'];
-                            if ($id_tipo == $cod14) {
+                            if ($id_tipo == $cod7) {
                                 echo "<option value='$id_tipo' selected>$tipo</option>";
                             } else {
                                 echo "<option value='$id_tipo'>$tipo</option>";
@@ -110,7 +111,7 @@ require("pueba.php");
 
             <div class="row mb-3 pt-1">
                 <div class="col-md-6">
-                    <input type="hidden" name="id_estudiante" value="<?php echo $cod1; ?>">
+                   
                     <label for="nombre_completo_estudiante" class="form-label">Nombre completo:</label>
                     <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante">
                 </div>

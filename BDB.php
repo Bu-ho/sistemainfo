@@ -1,10 +1,10 @@
 <?php
 
-
+require_once("AdminCambioEstudi.php");
 if (isset($_POST["BTNbuscar"])) {
     require_once("conexion.php");
     $con = conectar();
-    $Ndocumento = $_POST["Bdocu"];
+    $Ndocumento = $_GET["Bdocu"];
     $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados_estudiantes.estado as estado_estudiante, sexo.N_sexo as sexo_e,  grupo.N_grupo as grupo, estratos.nombre as estrato_id
         FROM estudiantes 
         JOIN estratos ON estudiantes.estrato_id = estratos.id

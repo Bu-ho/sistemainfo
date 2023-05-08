@@ -57,9 +57,8 @@
                 <div class="input-group buscador mt-5 mb-3">
                     <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
                     <div class="input-group-append">
-                        <input type="submit" class="btn btn-outline-primary rounded-pill mr-3" value="Buscar">
+                        <input type="submit" class="btn btn-outline-primary rounded-pill mr-3" value="Buscar" name="BTNbuscar">
                     </div>
-
                 </div>
             </form>
         </div>

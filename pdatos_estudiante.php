@@ -84,8 +84,7 @@ require_once("mostrarDatosEstu.php");
                     <label class="form-label">Padre de familia:</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="id_padre_familia">
                         <?php
-                        require_once('conexion.php');
-                        $con = conectar();
+                        
                         $query = "SELECT * FROM padres_familia";
                         $resultado = mysqli_query($con, $query);
                         while ($row = mysqli_fetch_array($resultado)) {
@@ -121,8 +120,7 @@ require_once("mostrarDatosEstu.php");
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
                         <option selected><?php echo $cod7 ?></option>
                         <?php
-                        require_once('conexion.php');
-                        $con = conectar();
+                        
 
                         $query = "SELECT * FROM tipos_documento";
                         $resultado = mysqli_query($con, $query);

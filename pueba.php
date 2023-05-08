@@ -1,5 +1,5 @@
 <?php
-require_once("BDB.PHP");
+require("BDB.PHP");
 
 
 if (isset($_POST['BTNcambio'])) {
