@@ -10,14 +10,15 @@ $con = conectar();
 
 if (isset($_SESSION['Ndocumento'])) {
     $Ndocumento = $_SESSION['Ndocumento'];
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados.estado as estado_estudiante,sexo.N_sexo as sexo_e, estratos.nombre as estrato_id
-    FROM estudiantes 
-    JOIN sexo ON estudiantes.sexo_e = sexo.id
-    JOIN estados ON estudiantes.estado_estudiante = estados.id_estado
-    JOIN eps ON estudiantes.eps_id = eps.id 
-   JOIN estratos ON estudiantes.estrato_id = estratos.id
-    JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo
-    WHERE estudiantes.numero_identificacion = '$Ndocumento'";
+    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados.estado as estado_estudiante, sexo.N_sexo as sexo_e, estratos.nombre as estrato_id, tipo_usuario.Nombre as t_usuario
+        FROM estudiantes 
+        JOIN tipo_usuario ON estudiantes.t_usuario = tipo_usuario.id
+        JOIN sexo ON estudiantes.sexo_e = sexo.id
+        JOIN estados ON estudiantes.estado_estudiante = estados.id_estado
+        JOIN eps ON estudiantes.eps_id = eps.id 
+        JOIN estratos ON estudiantes.estrato_id = estratos.id
+        JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo
+        WHERE estudiantes.numero_identificacion = '$Ndocumento'";
 
 
 
@@ -61,15 +62,33 @@ if (isset($_POST['BTNcambio'])) {
     $con = conectar();
 
 
-    $cod2 = $_POST["nombre_completo_estudiante"];
-    $cod8 = $_POST["numero_documento"];
-    $Consulta = "UPDATE estudiantes SET nombre_completo_estudiante='$cod2' WHERE numero_identificacion='$cod8';";
 
-    $result = mysqli_query($con, $Consulta);
+    $numero_identificacion = $_POST['numero_documento'];
+    $nombre_completo_estudiante = $_POST['nombre_completo_estudiante'];
+    $apellido_completo_estudiante = $_POST['apellido_completo_estudiante'];
+    $fecha_nacimiento = $_POST['fecha_nacimiento'];
+    $sexo_e = $_POST['sexo_e'];
+    $direccion_residencia = $_POST['direccion_residencia'];
+    $tipo_documento = $_POST['tipo_documento'];
+  
+    $alergias = $_POST['alergias'];
+    $enfermedades = $_POST['enfermedades'];
+    $eps_id = $_POST['eps_id'];
+    $estrato_id = $_POST['estrato_id'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $contrasena = $_POST['contrasena'];
+   
+
+    $sql = "UPDATE estudiantes SET nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps_id='$eps_id', estrato_id='$estrato_id', telefono='$telefono', correo='$correo', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";
+
+
+
+    $result = mysqli_query($con, $sql);
 
     if ($result === false) {
         mysqli_close($con);
-        echo '<p class="texto-invi"></p>';
+       
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
         echo "<script>
         Swal.fire({
@@ -90,7 +109,7 @@ if (isset($_POST['BTNcambio'])) {
         echo "<script>
         Swal.fire({
             icon: 'success',
-            title: '¡Bienvenido!',
+            title: '¡ echo $tipo_documento;!',
             text: 'Los datos se han actualizado',
             showConfirmButton: false,
             timer: 2000,

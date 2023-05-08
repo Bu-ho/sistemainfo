@@ -1,7 +1,6 @@
 <?php
 require_once("mostrarDatosEstu.php");
 
-
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +56,10 @@ require_once("mostrarDatosEstu.php");
                 margin-top: 40px;
             }
         }
+
+        .movi2 {
+            margin-left: 170px;
+        }
     </style>
 
 
@@ -77,17 +80,31 @@ require_once("mostrarDatosEstu.php");
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="numero_documento" class="form-label">Número de documento:</label>
-                    <input type="text" value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
+                    <label class="form-label">Número de documento:</label>
+                    <input type="text" value="<?php echo $cod8; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6 movi">
-                    <label class="form-label">Padre de familia:</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="id_padre_familia">
+                    <label class="form-label">Tipo de documento</label>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
+                        <option value=""><?php echo $cod7; ?></option>
                         <?php
+                        require_once('conexion.php');
+                        $con = conectar();
 
+                        $query = "SELECT * FROM tipos_documento";
+                        $resultado = mysqli_query($con, $query);
 
-
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id_tipo'];
+                            $tipo = $row['tipo'];
+                            if ($id_tipo == $cod7) {
+                                echo "<option value='$id_tipo'selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
                         ?>
+
                     </select>
                 </div>
 
@@ -95,8 +112,8 @@ require_once("mostrarDatosEstu.php");
 
             <div class="row mb-3 pt-1">
                 <div class="col-md-6">
-                    <input type="hidden" name="id_estudiante" value="<?php echo $cod1; ?>">
-                    <label for="nombre_completo_estudiante" class="form-label">Nombre completo:</label>
+
+                    <label class="form-label">Nombre completo:</label>
                     <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante">
                 </div>
                 <div class="col-md-6 movi">
@@ -106,21 +123,38 @@ require_once("mostrarDatosEstu.php");
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label class="form-label"><?php echo $cod8; ?></label>
+                    <label class="form-label">Fecha de nacimiento</label>
                     <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                 </div>
-                <div class="col-md-6 movi">
-                    <label class="form-label">Tipo de documento</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
-                        <option selected><?php echo $cod7 ?></option>
-                       
+                <div class="col-md-6 ">
+                    <label class="form-label">Sexo</label>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo_e">
+
+                        <?php
+
+                        require_once('conexion.php');
+                        $con = conectar();
+                        $query = "SELECT * FROM sexo";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id'];
+                            $tipo = $row['N_sexo'];
+                            if ($id_tipo == $cod5) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
+
             </div>
             <div class="row mb-3">
                 <div class="col-md-12">
                     <label class="form-label">Dirección de residencia:</label>
-                    <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="apellido_completo_estudiante">
+                    <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="direccion_residencia">
 
                 </div>
 
@@ -136,60 +170,83 @@ require_once("mostrarDatosEstu.php");
                     <input type="text" value="<?php echo $cod18; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="correo">
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row">
 
-                <div class="col-md-6">
-                    <label class="form-label">Estado</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod14 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
-                    </select>
-                </div>
-                <div class="col-md-6 movi">
-                    <label class="form-label">Grupo</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod9 ?> </option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
-                    </select>
-                </div>
+
+
                 <div class="col-md-6  mb-3">
                     <label class="form-label">Estrato</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod16 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estrato_id">
+                        <?php
+
+                        require_once('conexion.php');
+                        $con = conectar();
+                        $query = "SELECT * FROM estratos";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id'];
+                            $tipo = $row['nombre'];
+                            if ($id_tipo == $cod16) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Eps</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
-                        <option selected><?php echo $cod15 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="eps_id">
+
+                        <?php
+
+
+                        $query = "SELECT * FROM eps";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id'];
+                            $tipo = $row['nombre'];
+                            if ($id_tipo == $cod15) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
 
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Sexo</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo">
-                        <option selected><?php echo $cod5 ?></option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otro</option>
-                    </select>
+
+                <div class="row mb-3 ">
+                    <div class="col-md-6">
+                        <label class="form-label">Enfermedades:</label>
+                        <input type="text" value="<?php echo $cod13; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="enfermedades" placeholder="Enfermedades">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Alergias:</label>
+                        <input type="text" value="<?php echo $cod12; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="alergias" placeholder="Alergias">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label class="form-label">Teléfono:</label>
+                            <input type="text" value="<?php echo $cod17; ?>" style="text-align: center;" name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div style="text-align: center;">
+                            <label class="form-label">Rol</label>
+                            <input type="text" value="<?php echo $cod11; ?>" style="text-align: center;" class="form-control rounded-pill border-0 border-bottom border-secondary" readonly>
+                        </div>
+                    </div>
                 </div>
 
 
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Fecha de ingreso</label>
-                    <input type="text" class="form-control rounded-pill border-0 border-bottom  border-secondary" value="<?php echo $cod10 ?>" name="fecha_i">
-                </div>
+
+
             </div>
             <div class="input-group buscador mt-5 mb-3" style="display:flex; justify-content:center;">
                 <div class="input-group-append">

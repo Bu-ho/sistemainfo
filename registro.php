@@ -179,7 +179,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="telefono" class="p-2">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                            <input type="text" class="form-control" name="telefono" placeholder="Teléfono">
                         </div>
 
 

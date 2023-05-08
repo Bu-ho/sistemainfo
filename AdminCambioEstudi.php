@@ -1,6 +1,7 @@
 <?php
 require_once("pueba.php");
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +71,7 @@ require_once("pueba.php");
                     <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los estudiantes</h1>
                     <img src="img/logo.png" alt="Descripción de la imagen">
                 </div>
-                <form action="" method="post">
+                <form action="AdminCambioEstudi.php" method="post">
                     <div class="input-group buscador mt-5 mb-3">
                         <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
                         <div class="input-group-append">
@@ -83,13 +84,13 @@ require_once("pueba.php");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="numero_documento" class="form-label">Número de documento:</label>
-                    <input type="text" value="<?php  echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
+                    <input type="text" value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Padre de familia:</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="id_padre_familia">
                         <option selected><?php echo $cod7 ?></option>
-                       
+
 
                     </select>
                 </div>
@@ -98,7 +99,7 @@ require_once("pueba.php");
 
             <div class="row mb-3 pt-1">
                 <div class="col-md-6">
-                   
+
                     <label for="nombre_completo_estudiante" class="form-label">Nombre completo:</label>
                     <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante">
                 </div>
@@ -116,7 +117,23 @@ require_once("pueba.php");
                     <label class="form-label">Tipo de documento</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
 
-                        
+                        <?php
+                        require_once('conexion.php');
+                        $con = conectar();
+
+                        $query = "SELECT * FROM tipos_documento";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id_tipo'];
+                            $tipo = $row['tipo'];
+                            if ($id_tipo == $cod14) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
 
                     </select>
                 </div>
@@ -191,7 +208,7 @@ require_once("pueba.php");
                     <label class="form-label">Estrato</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
                         <?php
-                      
+
 
                         $query = "SELECT * FROM estratos";
                         $resultado = mysqli_query($con, $query);
@@ -213,7 +230,7 @@ require_once("pueba.php");
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="">
 
                         <?php
-                        
+
 
                         $query = "SELECT * FROM eps";
                         $resultado = mysqli_query($con, $query);
@@ -234,9 +251,9 @@ require_once("pueba.php");
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Sexo</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo">
-                        
+
                         <?php
-                     
+
 
                         $query = "SELECT * FROM sexo";
                         $resultado = mysqli_query($con, $query);

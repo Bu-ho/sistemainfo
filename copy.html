@@ -1,3 +1,8 @@
+<?php
+require_once("BDB.php");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,23 +18,33 @@
             width: 650px;
         }
 
+
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #0a705d;
+        }
+
+
+        .input-group-append input {
+            left: 20px;
         }
 
         .pt-5 {
             margin-top: 40px;
         }
 
+        .mb-3 {
+            margin-top: 40px;
+        }
+
         .card img {
             width: 80px;
             height: 80px;
+
         }
 
         .card {
-            box-shadow: 0 0 500px rgba(0, 0, 0, 0.5) !important;
-            margin-top: 150px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5) !important;
         }
 
         @media (max-width: 768px) {
@@ -42,29 +57,36 @@
             }
         }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </head>
 
 <body>
+
     <div class="container p-3">
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los estudiantes</h1>
-                    <img src="img/logo.png">
+                    <img src="img/logo.png" alt="Descripción de la imagen">
                 </div>
-            </div>
-            <form action="AdminCambioEstudi.php" method="get">
-                <div class="input-group buscador mt-5 mb-3">
-                    <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
-                    <div class="input-group-append">
-                        <input type="submit" class="btn btn-outline-primary rounded-pill mr-3" value="Buscar" name="BTNbuscar">
+                <form action="AdminCambioEstudi.php" method="post">
+                    <div class="input-group buscador mt-5 mb-3">
+                        <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary"
+                            name="Bdocu" placeholder="Buscar...">
+                        <div class="input-group-append">
+                            <input type="submit" class="btn btn-outline-primary rounded-pill mr-3" value="Buscar"
+                                name="BTNbuscar">
+                            
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
+            </div>
+          
+        </form>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
