@@ -34,7 +34,7 @@ if (isset($_POST['Ndocumento'], $_POST['Contrasena'], $_POST['t_u'])) {
               location.href = "AdUV.php";
             } else if ("' . $t_p . '" == "Empleado" || "' . $t_p . '" == "empleado") {
               location.href = "EditE.php";
-            } else if ("' . $t_p . '" == "3" ) {
+            } else if ("' . $t_p . '" == "Estudiante" ) {
               location.href = "pdatos_estudiante.php";
             }
           }

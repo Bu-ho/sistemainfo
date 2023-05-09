@@ -19,7 +19,7 @@ if (isset($_POST['numero_documento'])) {
   $t_documento = $_POST['tipo_documento'];
   $eps = $_POST['t_eps'];
   $estrato = $_POST['t_estrato'];
-  $rol = $_POST['id_tipo_usu'];
+  $rol = $_POST['tipo_usu'];
   $alergia = $_POST['alergias'];
   $enfermedad = $_POST['enfermedad'];
   $correo = $_POST['correo_electronico'];
@@ -28,9 +28,9 @@ if (isset($_POST['numero_documento'])) {
   $fecha_registro = date("Y-m-d");
 
   echo $fecha_registro = date("Y-m-d");
-  echo $t_documento = $_POST['tipo_documento'];
+  echo $rol = $_POST['tipo_usu'];
 
-  if ($_POST['id_tipo_usu'] == 3) {
+  if ($_POST['tipo_usu'] == 'Estudiante') {
 
     $query = "SELECT * FROM estudiantes WHERE numero_identificacion='$Ndocumento'";
     $resulta = mysqli_query($con, $query);
@@ -53,8 +53,8 @@ if (isset($_POST['numero_documento'])) {
       </script>';
       exit;
     } else {
-      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps_id, estrato_id, telefono,correo, contrasena,id_estudiante) 
-VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','1', '$eps', '$estrato', '$tel', '$correo', '$contrasena','')";
+      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps, estrato, telefono, correo, contrasena) 
+VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','activo', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);
       if ($result2) {
@@ -94,7 +94,7 @@ VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento
       }
     }
   }
-  if ($_POST['id_tipo_usu'] == 4) {
+  if ($_POST['tipo_usu'] == 4) {
 
     $query = "SELECT * FROM padres_familia WHERE numero_identificacion='$Ndocumento'";
     $resulta = mysqli_query($con, $query);

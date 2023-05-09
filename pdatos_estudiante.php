@@ -84,24 +84,26 @@ require_once("mostrarDatosEstu.php");
                     <input type="text" value="<?php echo $cod8; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6 movi">
-                    <label class="form-label">Tipo de documento</label>
+                    <label class="form-label">Eps</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
-                            <?php
-                            require_once('conexion.php');
-                            $con = conectar();
-                            $query = "SELECT * FROM tipos_documento";
-                            $resultado = mysqli_query($con, $query);
-                            while ($row = mysqli_fetch_array($resultado)) {
-                                $id_tipo = $row['id_tipo'];
-                                $tipo = $row['tipo'];
-                                if ($id_tipo == $cod16) {
-                                    echo "<option value='$id_tipo' selected>$tipo</option>";
-                                } else {
-                                    echo "<option value='$id_tipo'>$tipo</option>";
-                                }
+
+                        <?php
+
+                        require_once('conexion.php');
+                        $con = conectar();
+                        $query = "SELECT * FROM tipos_documento";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+                            $id_tipo = $row['id_tipo'];
+                            $tipo = $row['tipo'];
+                            if ($id_tipo == $cod7) {
+                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$id_tipo'>$tipo</option>";
                             }
-                            ?>
-                        </select>
+                        }
+                        ?>
                     </select>
                 </div>
 
@@ -144,6 +146,9 @@ require_once("mostrarDatosEstu.php");
                             }
                         }
                         ?>
+
+
+
                     </select>
                 </div>
 
@@ -173,7 +178,7 @@ require_once("mostrarDatosEstu.php");
 
                 <div class="col-md-6  mb-3">
                     <label class="form-label">Estrato</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estrato_id">
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estrato">
                         <?php
                         require_once('conexion.php');
                         $con = conectar();
@@ -191,7 +196,7 @@ require_once("mostrarDatosEstu.php");
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Eps</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="eps_id">
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="eps">
 
                         <?php
 

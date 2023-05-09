@@ -7,15 +7,8 @@ $con = conectar();
 
 if (isset($_SESSION['Ndocumento'])) {
     $Ndocumento = $_SESSION['Ndocumento'];
-    $sql = "SELECT estudiantes.*, eps.nombre as nombre_eps, tipos_documento.tipo as tipo_documento, estados.estado as estado_estudiante, sexo.N_sexo as sexo_e, estratos.nombre as estrato_id, tipo_usuario.Nombre as t_usuario
-        FROM estudiantes 
-        JOIN tipo_usuario ON estudiantes.t_usuario = tipo_usuario.id
-        JOIN sexo ON estudiantes.sexo_e = sexo.id
-        JOIN estados ON estudiantes.estado_estudiante = estados.id_estado
-        JOIN eps ON estudiantes.eps_id = eps.id 
-        JOIN estratos ON estudiantes.estrato_id = estratos.id
-        JOIN tipos_documento ON estudiantes.tipo_documento = tipos_documento.id_tipo
-        WHERE estudiantes.numero_identificacion = '$Ndocumento'";
+
+    $sql = "SELECT * FROM estudiantes WHERE numero_identificacion = '$Ndocumento'";
 
 
 
@@ -26,7 +19,7 @@ if (isset($_SESSION['Ndocumento'])) {
 
         while ($row = mysqli_fetch_assoc($result)) {
      
-            $a = "id_estudiante";
+          
             $b = "nombre_completo_estudiante";
             $c = "apellido_completo_estudiante";
             $d = "correo";
@@ -42,13 +35,13 @@ if (isset($_SESSION['Ndocumento'])) {
             $n = "alergias";
             $o = "enfermedades";
             $p = "estado_estudiante";
-            $q = "nombre_eps";
-            $r = "estrato_id";
+            $q = "eps";
+            $r = "estrato";
             $s = "telefono";
-            $t = "id_padres";
+            
 
 
-            $cod1 = $row[$a];
+          
             $cod2 = $row[$b];
             $cod3 = $row[$c];
             $cod4 = $row[$g];
@@ -67,7 +60,7 @@ if (isset($_SESSION['Ndocumento'])) {
             $cod17 = $row[$s];
             $cod18 = $row[$d];
             $cod19 = $row[$e];
-            $cod20 = $row[$t];
+           
        
         }
     } else {
@@ -94,14 +87,14 @@ if (isset($_POST['BTNcambio'])) {
     $tipo_documento = $_POST['tipo_documento'];
     $alergias = $_POST['alergias'];
     $enfermedades = $_POST['enfermedades'];
-    $eps_id = $_POST['eps_id'];
-    $estrato_id = $_POST['estrato_id'];
+    $eps = $_POST['eps'];
+    $estrato = $_POST['estrato'];
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
    
 
-    $sql = "UPDATE estudiantes SET nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps_id='$eps_id', estrato_id='$estrato_id', telefono='$telefono', correo='$correo', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";
+    $sql = "UPDATE estudiantes SET nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";
 
 
 
