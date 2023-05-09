@@ -54,7 +54,7 @@ if (isset($_POST['numero_documento'])) {
       exit;
     } else {
       $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps, estrato, telefono, correo, contrasena) 
-VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','activo', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
+                                                    VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','activo', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);
       if ($result2) {
@@ -94,7 +94,7 @@ VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento
       }
     }
   }
-  if ($_POST['tipo_usu'] == 4) {
+  if ($_POST['tipo_usu'] == 'Padre de familia') {
 
     $query = "SELECT * FROM padres_familia WHERE numero_identificacion='$Ndocumento'";
     $resulta = mysqli_query($con, $query);
@@ -118,7 +118,7 @@ VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento
       exit;
     } else {
       $consulta = "INSERT INTO padres_familia (nombre_completo_padre, apellido_completo_padre, fecha_nacimiento, sexo, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado, eps_id, estrato_id, telefono,correo, contrasena) 
-VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','1', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
+                                            VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','1', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);
       if ($result2) {
