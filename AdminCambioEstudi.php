@@ -83,21 +83,22 @@ require_once("pueba.php");
                     <label class="form-label">Número de documento:</label>
                     <input type="text" value="<?php echo $cod8; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
+
                 <div class="col-md-6 movi">
-                    <label class="form-label">Eps</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
+                    <label class="form-label">Acudiente</label>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="cc_padre">
 
                         <?php
 
                         require_once('conexion.php');
                         $con = conectar();
-                        $query = "SELECT * FROM tipos_documento";
+                        $query = "SELECT * FROM padres_familia";
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
-                            
-                            $tipo = $row['tipo'];
-                            if ($tipo == $cod7) {
+
+                            $tipo = $row['numero_identificacion'];
+                            if ($tipo == $cod20) {
                                 echo "<option value='$tipo' selected>$tipo</option>";
                             } else {
                                 echo "<option value='$tipo'>$tipo</option>";
@@ -137,7 +138,7 @@ require_once("pueba.php");
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
-                            
+
                             $tipo = $row['N_sexo'];
                             if ($tipo == $cod5) {
                                 echo "<option value='$tipo' selected>$tipo</option>";
@@ -185,7 +186,7 @@ require_once("pueba.php");
                         $query = "SELECT * FROM estratos";
                         $resultado = mysqli_query($con, $query);
                         while ($row = mysqli_fetch_array($resultado)) {
-                          
+
                             $tipo = $row['nombre'];
                             $selected = ($tipo == $cod16) ? 'selected' : '';
                             echo "<option value='$tipo' $selected>$tipo</option>";
@@ -205,7 +206,7 @@ require_once("pueba.php");
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
-                         
+
                             $tipo = $row['nombre'];
                             if ($tipo == $cod15) {
                                 echo "<option value='$tipo' selected>$tipo</option>";
@@ -235,7 +236,7 @@ require_once("pueba.php");
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Eps</label>
+                        <label class="form-label">Tipo de usuarios</label>
                         <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="t_u">
 
                             <?php
@@ -245,7 +246,7 @@ require_once("pueba.php");
                             $resultado = mysqli_query($con, $query);
 
                             while ($row = mysqli_fetch_array($resultado)) {
-                                
+
                                 $tipo = $row['Nombre'];
                                 if ($tipo == $cod11) {
                                     echo "<option value='$tipo' selected>$tipo</option>";
@@ -256,7 +257,32 @@ require_once("pueba.php");
                             ?>
                         </select>
                     </div>
+                            <div class="col-md-6 movi">
+                                <label class="form-label">Grupo</label>
+                                <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
 
+                                    <?php
+
+                                    require_once('conexion.php');
+                                    $con = conectar();
+                                    $query = "SELECT * FROM grupos";
+                                    $resultado = mysqli_query($con, $query);
+
+                                    while ($row = mysqli_fetch_array($resultado)) {
+
+                                        $tipo = $row['N_grupo'];
+                                        if ($tipo == $cod7) {
+                                            echo "<option value='$tipo' selected>$tipo</option>";
+                                        } else {
+                                            echo "<option value='$tipo'>$tipo</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            
+                        </select>
+                  
 
 
 
