@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['BTNcambio'])) {
-    include_once("conexion.php");
+    include_once("../conexion.php");
 
     $con = conectar();
 

@@ -3,7 +3,7 @@ require("BDB.PHP");
 
 
 if (isset($_POST['BTNcambio'])) {
-    include_once("conexion.php");
+    include_once("../conexion.php");
 
     $con = conectar();
 
@@ -42,7 +42,7 @@ if (isset($_POST['BTNcambio'])) {
             timer: 2000,
             timerProgressBar: true
         }).then(function() {
-            window.location.href = 'tu_pagina.html';
+            window.location.href = 'copy.html';
         });
     </script>";
     } else {
@@ -53,12 +53,12 @@ if (isset($_POST['BTNcambio'])) {
         Swal.fire({
             icon: 'success',
             title: '¡Bienvenido!',
-            text: 'Los datos se han actualizado echo $tipo_documento',
+            text: 'Los datos se han  actualizado correctamente',
             showConfirmButton: false,
             timer: 2000,
             timerProgressBar: true
         }).then(function() {
-            window.location.href = 'copycambios.html';
+            window.location.href = 'copy.html';
         });
     </script>";
     }

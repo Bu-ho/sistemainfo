@@ -71,8 +71,8 @@ require_once("mostrarDatosEstu.php");
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Aquí puedes actualizar tus datos</h1>
-                    <img src="img/logo.png" alt="Descripción de la imagen">
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Aquí puedes actualizar tus datos estudiante</h1>
+                    <img src="../img/logo.png" alt="Descripción de la imagen">
                 </div>
                 <form action="" method="post">
 
@@ -84,12 +84,12 @@ require_once("mostrarDatosEstu.php");
                     <input type="text" value="<?php echo $cod8; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6 movi">
-                    <label class="form-label">Eps</label>
+                    <label class="form-label">tipo de documento</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
 
                         <?php
 
-                        require_once('conexion.php');
+                        require_once('../conexion.php');
                         $con = conectar();
                         $query = "SELECT * FROM tipos_documento";
                         $resultado = mysqli_query($con, $query);
@@ -131,7 +131,7 @@ require_once("mostrarDatosEstu.php");
 
                         <?php
 
-                        require_once('conexion.php');
+                        require_once('../conexion.php');
                         $con = conectar();
                         $query = "SELECT * FROM sexo";
                         $resultado = mysqli_query($con, $query);
@@ -180,7 +180,7 @@ require_once("mostrarDatosEstu.php");
                     <label class="form-label">Estrato</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estrato">
                         <?php
-                        require_once('conexion.php');
+                        require_once('../conexion.php');
                         $con = conectar();
                         $query = "SELECT * FROM estratos";
                         $resultado = mysqli_query($con, $query);

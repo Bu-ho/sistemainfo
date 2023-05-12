@@ -1,15 +1,16 @@
 <?php
 
-
+error_reporting(0);
 
 if (isset($_POST["BTNbuscar"])) {
-    require_once("conexion.php");
+    require_once("../conexion.php");
     $con = conectar();
     $Ndocumento = $_POST["Bdocu"];
     $sql = "SELECT * FROM estudiantes WHERE numero_identificacion = '$Ndocumento'";
     $resul = mysqli_query($con, $sql);
     if (mysqli_num_rows($resul) > 0) {
-        // Si se encontró un registro en la base de datos, mostrar información del usuario
+       
+        
         $row = mysqli_fetch_array($resul);
         $b = "nombre_completo_estudiante";
         $c = "apellido_completo_estudiante";
@@ -64,7 +65,7 @@ if (isset($_POST["BTNbuscar"])) {
               text: "No se encontró ningún registro con el número de documento proporcionado",
               icon: "error",
               willClose: () => {
-                 location.href = ""; 
+                 location.href = "copy.html"; 
               }
             });
         </script>';

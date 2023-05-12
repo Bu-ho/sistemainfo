@@ -1,41 +1,8 @@
 <?php
 
 
-
-if($_post)
-
-if (isset($_POST["BTNborrar"])) {
-require_once("BDB.PHP");
-require_once("conexion.php");
-
-$con = conectar();
-
-
-$Ndocumento = $_POST['Bdocu'];
-$sql = "DELETE FROM estudiantes WHERE numero_identificacion='$Ndocumento'";
-
-
-
-$result = mysqli_query($con, $sql);
-
-if ($result == 0) {
-mysqli_close($con);
-} else {
-mysqli_close($con);
-echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
-echo " <script>
-    Swal.fire(
-        'Eliminación exitosa!',
-        'El usuario ha sido eliminado.',
-        'success'
-    )
-</script>";
-}
-}
-
-
 if (isset($_POST['BTNcambio'])) {
-include_once("conexion.php");
+include_once("../conexion.php");
 $con = conectar();
 
 
