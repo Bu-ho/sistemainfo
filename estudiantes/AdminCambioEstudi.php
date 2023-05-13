@@ -118,9 +118,9 @@ require_once("pueba.php");
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="#">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/">Estudiantes Asignados a un
                                         padre</a></li>
 
                             </ul>
@@ -142,7 +142,7 @@ require_once("pueba.php");
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
 
@@ -182,8 +182,33 @@ require_once("pueba.php");
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label class="form-label">Número de documento:</label>
-                    <input type="text" value="<?php echo $cod8; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="Numéro de documento">
+                    <label class="form-label">Número de documento actual:</label>
+                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">nuevo número de documento:</label>
+
+                    <input type="text" class="form-control rounded-pill border-0 border-bottom border-secondary" value="<?php echo $cod8; ?>" name="nuevo_documento" placeholder="ingrese el nuevo numero de documento:">
+                </div>
+
+
+            </div>
+
+            <div class="row mb-3 pt-1">
+                <div class="col-md-6">
+
+                    <label class="form-label">Nombre completo:</label>
+                    <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante" placeholder="Nombre completo">
+                </div>
+                <div class="col-md-6 movi">
+                    <label class="form-label">Apellido completo:</label>
+                    <input type="text" value="<?php echo $cod3; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="apellido_completo_estudiante" placeholder="Apellido completo">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Fecha de nacimiento</label>
+                    <input type="date" value="<?php echo $cod4; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                 </div>
 
                 <div class="col-md-6 movi">
@@ -210,50 +235,7 @@ require_once("pueba.php");
                     </select>
                 </div>
 
-            </div>
 
-            <div class="row mb-3 pt-1">
-                <div class="col-md-6">
-
-                    <label class="form-label">Nombre completo:</label>
-                    <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante" placeholder="Nombre completo">
-                </div>
-                <div class="col-md-6 movi">
-                    <label class="form-label">Apellido completo:</label>
-                    <input type="text" value="<?php echo $cod3; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="apellido_completo_estudiante" placeholder="Apellido completo">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label class="form-label">Fecha de nacimiento</label>
-                    <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
-                </div>
-                <div class="col-md-6 ">
-                    <label class="form-label">Sexo</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo_e">
-
-                        <?php
-
-                        require_once('../conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM sexo";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-
-                            $tipo = $row['N_sexo'];
-                            if ($tipo == $cod5) {
-                                echo "<option value='$tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
-
-
-
-                    </select>
-                </div>
 
             </div>
             <div class="row mb-3">
@@ -334,7 +316,7 @@ require_once("pueba.php");
                     <div class="col-md-6 mb-3">
                         <div>
                             <label class="form-label">Teléfono:</label>
-                            <input type="text" value="<?php echo $cod17; ?>"  name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
+                            <input type="text" value="<?php echo $cod17; ?>" name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
                         </div>
                     </div>
 
@@ -388,6 +370,36 @@ require_once("pueba.php");
                             }
                             ?>
                         </select>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label class="form-label">Sexo</label>
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo_e">
+
+                            <?php
+
+                            require_once('../conexion.php');
+                            $con = conectar();
+                            $query = "SELECT * FROM sexo";
+                            $resultado = mysqli_query($con, $query);
+
+                            while ($row = mysqli_fetch_array($resultado)) {
+
+                                $tipo = $row['N_sexo'];
+                                if ($tipo == $cod5) {
+                                    echo "<option value='$tipo' selected>$tipo</option>";
+                                } else {
+                                    echo "<option value='$tipo'>$tipo</option>";
+                                }
+                            }
+                            ?>
+
+
+
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Fecha de ingreso</label>
+                        <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                     </div>
                 </div>
 

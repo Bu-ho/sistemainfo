@@ -62,7 +62,7 @@ if (isset($_SESSION['Ndocumento'])) {
             $cod19 = $row[$e];
         }
     } else {
-        echo "No se encontraron datos del estudiante";
+        echo "No se encontraron datos del profesor";
     }
 
     mysqli_close($con);

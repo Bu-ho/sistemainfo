@@ -18,8 +18,8 @@ if (isset($_SESSION['Ndocumento'])) {
 
 
         while ($row = mysqli_fetch_assoc($result)) {
-     
-          
+
+
             $b = "nombre_completo_estudiante";
             $c = "apellido_completo_estudiante";
             $d = "correo";
@@ -38,10 +38,10 @@ if (isset($_SESSION['Ndocumento'])) {
             $q = "eps";
             $r = "estrato";
             $s = "telefono";
-            
 
 
-          
+
+
             $cod2 = $row[$b];
             $cod3 = $row[$c];
             $cod4 = $row[$g];
@@ -60,8 +60,6 @@ if (isset($_SESSION['Ndocumento'])) {
             $cod17 = $row[$s];
             $cod18 = $row[$d];
             $cod19 = $row[$e];
-           
-       
         }
     } else {
         echo "No se encontraron datos del estudiante";
@@ -92,7 +90,7 @@ if (isset($_POST['BTNcambio'])) {
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
-   
+
 
     $sql = "UPDATE estudiantes SET nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";
 
@@ -102,7 +100,7 @@ if (isset($_POST['BTNcambio'])) {
 
     if ($result === false) {
         mysqli_close($con);
-       
+
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
         echo "<script>
         Swal.fire({
@@ -123,7 +121,7 @@ if (isset($_POST['BTNcambio'])) {
         echo "<script>
         Swal.fire({
             icon: 'success',
-            title: '¡ echo $tipo_documento;!',
+            title: '¡Felicidades!',
             text: 'Los datos se han actualizado',
             showConfirmButton: false,
             timer: 2000,

@@ -1,46 +1,41 @@
-<?php
-require_once("BDB.php");
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulario de Estudiantes</title>
+    <title>Formulario de Padres</title>
     <!-- Agregar CSS de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
     <style>
         .buscador {
-            width: 650px;
+            width: 550px !important;
+            height: 60px;
+            margin-left: 48px;
+            bottom: 100px;
 
         }
 
 
         body {
-            font-family: 'Montserrat', sans-serif;
             background-color: #0a705d !important;
         }
 
 
-        .input-group-append input {
-            left: 20px;
-        }
-
-        .pt-5 {
-            margin-top: 40px;
-        }
-
-        .mb-3 {
-            margin-top: 40px;
-        }
 
         .card img {
-            width: 80px;
-            height: 80px;
+
+            height: 130px;
+        }
+
+        .centro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 120px;
+            position: relative;
 
 
         }
@@ -63,15 +58,15 @@ require_once("BDB.php");
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="admin.php">
-                    <img src="img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                <a class="navbar-brand" href="../admin.php">
+                    <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Administrador
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -81,7 +76,7 @@ require_once("BDB.php");
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="admin.php">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
                         </li>
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -89,9 +84,10 @@ require_once("BDB.php");
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="copy.html">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
                                 <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/estugrupo.html">Estudiantes en un
+                                        grupo</a></li>
 
                             </ul>
 
@@ -104,9 +100,9 @@ require_once("BDB.php");
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
                                 <li><a class="dropdown-item" href="">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
                                         padre</a></li>
 
                             </ul>
@@ -120,7 +116,7 @@ require_once("BDB.php");
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
                                 <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
                             </ul>
@@ -129,12 +125,10 @@ require_once("BDB.php");
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Crear nuevo administrador</a>
-                        </li>
+
                     </ul>
                 </div>
 
@@ -153,27 +147,35 @@ require_once("BDB.php");
     <div class="container p-3">
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
-                <div class="col-md-12 text-center mb-3">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona editar Padres</h1>
-                    <img src="img/logo.png" alt="Descripción de la imagen" class="">
-                </div>
-                <form action="AdminCambioEstudi.php" method="post">
-                    <div class="input-group buscador mt-6 mb-1">
-                        <input type="search"
-                            class="form-control rounded-pill border-0 border-bottom border-secondary mb-3" name="Bdocu"
-                            placeholder="Buscar...">
-                        <div class="input-group-append">
-                            <input type="submit" class="btn btn-outline-primary rounded-pill mr-3 mb-3" value="Buscar"
-                                name="BTNbuscar">
+                <div class="col-md-12 text-center mt-3">
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona de búsqueda y actualización de padres o acudientes</h1>
 
+                    <img src="../img/padre.jpg" alt="Imagen de una profesora" style="margin-right: 300px;">
+
+                    <img src="../img/madre.jpg" alt="Imagen de un profesor" class="">
+
+                    <div class="centro">
+                        <img src="../img/logo.png" alt="Logo" class="" hrfe>
+                    </div>
+                </div>
+
+                <form action="cambiosprofeadmin.php" method="post">
+                    <div class="input-group buscador mt-6 pt-3">
+                        <input type="search"
+                            class="form-control  col-lg-6 col-md-12 rounded-pill border-0 border-bottom border-secondary mb-3"
+                            name="Bdocu" placeholder="Ingrese el documento del acudiente a buscar">
+                        <div class="input-group-append">
+                            <input type="submit" class="btn btn-outline-primary rounded-pill mr-3 mb-3 ms-2"
+                                value="Buscar" name="BTNbuscar">
                         </div>
                     </div>
-
             </div>
-
             </form>
+        </div>
+    </div>
+    </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

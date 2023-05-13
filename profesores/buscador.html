@@ -9,12 +9,13 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
-       .buscador {
-       width: 550px !important;
-       margin-left: 48px;
-       bottom: 100px;
+        .buscador {
+            width: 550px !important;
+            height: 60px;
+            margin-left: 48px;
+            bottom: 100px;
 
-       }
+        }
 
 
         body {
@@ -25,17 +26,19 @@
 
         .card img {
 
-        height: 130px;
+            height: 130px;
         }
-.centro {
-display: flex;
-justify-content: center;
-align-items: center;
-bottom: 120px;
-position: relative;
+
+        .centro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 120px;
+            position: relative;
 
 
-}
+        }
+
         .card {
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.5) !important;
             margin-top: 100px;
@@ -61,7 +64,7 @@ position: relative;
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="admin.html">
+                <a class="navbar-brand" href="../admin.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Administrador
                 </a>
@@ -72,7 +75,7 @@ position: relative;
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
                         </li>
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -80,9 +83,10 @@ position: relative;
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../estudiantes/copy.html">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/estugrupo.html">Estudiantes en un
+                                        grupo</a></li>
 
                             </ul>
 
@@ -95,9 +99,9 @@ position: relative;
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="copybuspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
                                         padre</a></li>
 
                             </ul>
@@ -111,8 +115,8 @@ position: relative;
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
                                 <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
                             </ul>
 
@@ -120,7 +124,7 @@ position: relative;
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
 
@@ -143,34 +147,34 @@ position: relative;
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center mt-3">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para buscar y actualizar profesores</h1>
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona de búsqueda y actualización de profesores</h1>
 
-                    <img src="../img/profesora.jpg" alt="Descripción de la imagen" style="margin-right: 300px;">
+                    <img src="../img/profesor.jpg" alt="Imagen de una profesora" style="margin-right: 300px;">
 
-                    <img src="../img/profesor.jpg" alt="Descripción de la imagen" class="">
+                    <img src="../img/profesora.jpg" alt="Imagen de un profesor" class="">
 
                     <div class="centro">
-                        <img src="../img/logo.png" alt="Descripción de la imagen" class="">
+                        <img src="../img/logo.png" alt="Logo" class="">
                     </div>
                 </div>
 
                 <form action="cambiosprofeadmin.php" method="post">
                     <div class="input-group buscador mt-6 pt-3">
                         <input type="search"
-                            class="form-control rounded-pill border-0 border-bottom border-secondary mb-3" name="Bdocu"
-                            placeholder="Buscar...">
+                            class="form-control  col-lg-6 col-md-12 rounded-pill border-0 border-bottom border-secondary mb-3"
+                            name="Bdocu" placeholder="Ingrese el documento del profesor a buscar">
                         <div class="input-group-append">
                             <input type="submit" class="btn btn-outline-primary rounded-pill mr-3 mb-3 ms-2"
                                 value="Buscar" name="BTNbuscar">
-
                         </div>
                     </div>
-                </form>
             </div>
+            </form>
         </div>
     </div>
+    </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

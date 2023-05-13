@@ -12,13 +12,10 @@ require_once("mostrarDatosEstu.php");
     <!-- Agregar CSS de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <style>
-        
-
-
         body {
-            font-family: 'Montserrat', sans-serif;
+
             background-color: #0a705d;
         }
 
@@ -54,8 +51,6 @@ require_once("mostrarDatosEstu.php");
                 margin-top: 40px;
             }
         }
-
-       
     </style>
 
 

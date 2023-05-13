@@ -38,7 +38,7 @@ require_once("admindatos.php");
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="estudiantes/copy.html">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="estudiantes/copy.php">Editar estudiante</a></li>
                                 <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
                                 <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
 
@@ -52,7 +52,7 @@ require_once("admindatos.php");
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="copybuspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="padres/buspadres.html">Editar padres</a></li>
                                 <li><a class="dropdown-item" href="">Total de padres</a></li>
                                 <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
                                         padre</a></li>

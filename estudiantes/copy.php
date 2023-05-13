@@ -7,7 +7,7 @@
     <!-- Agregar CSS de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/admin.css">
     <style>
         .buscador {
@@ -55,8 +55,8 @@
         }
     </style>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link rel="stylesheet" href="../css/admin.css">
+
+
 </head>
 
 <body>
@@ -94,8 +94,8 @@
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
                                 <li><a class="dropdown-item" href="#">Asignar un estudiante a un padre</a></li>
                                 <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
                                         padre</a></li>
@@ -110,16 +110,16 @@
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
+
                             </ul>
 
 
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
 
@@ -142,7 +142,7 @@
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center mt-3">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para buscar y actualizar estudiantes</h1>
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona de búsqueda y actualización de estudiantes</h1>
 
                     <img src="../img/mujer.png" alt="Descripción de la imagen" style="margin-right: 300px;">
 
