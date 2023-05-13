@@ -76,8 +76,8 @@ if (isset($_POST['BTNcambio'])) {
 
     $result = mysqli_query($con, $sql);
 
-   
-     if ($result === false) {
+
+    if ($result === 0) {
         mysqli_close($con);
 
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
@@ -94,9 +94,8 @@ if (isset($_POST['BTNcambio'])) {
         });
     </script>";
     } else {
-        // Compara el valor del número de identificación original con el nuevo valor
         if ($original_numero_identificacion !== $numero_identificacion) {
-           
+
             session_unset();
             session_destroy();
             mysqli_close($con);
@@ -117,10 +116,10 @@ if (isset($_POST['BTNcambio'])) {
 
             exit;
         } else {
-        mysqli_close($con);
-        echo '<p class="texto-invi"></p>';
-        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-        echo "<script>
+            mysqli_close($con);
+            echo '<p class="texto-invi"></p>';
+            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+            echo "<script>
         Swal.fire({
             icon: 'success',
             title: '¡ Sr  $cod2',
@@ -132,6 +131,6 @@ if (isset($_POST['BTNcambio'])) {
             window.location.href = 'admin.php';
         });
     </script>";
+        }
     }
-}
 }

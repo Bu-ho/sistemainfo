@@ -121,7 +121,7 @@ if (isset($_POST['BTNcambio'])) {
         echo "<script>
         Swal.fire({
             icon: 'success',
-            title: '¡ echo $tipo_documento;!',
+            title: '¡ Felicidades;!',
             text: 'Los datos se han actualizado',
             showConfirmButton: false,
             timer: 2000,

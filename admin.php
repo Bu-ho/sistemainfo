@@ -67,7 +67,7 @@ require_once("admindatos.php");
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="profesores/cambiosprofeadmin.php">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="profesores/buscador.html">Editar profesores</a></li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
                                 <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
                             </ul>
@@ -79,9 +79,7 @@ require_once("admindatos.php");
                             <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Crear nuevo administrador</a>
-                        </li>
+                       
                     </ul>
                 </div>
 
@@ -298,7 +296,7 @@ require_once("admindatos.php");
                     </div>
                     <div class="col-md-6 mt-4">
                         <label for="apellido" class="form-label">Fecha de ingreso:</label>
-                        <input type="date" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_ingreso" placeholder="fecha de ingreso" value="<?php echo $cod10 ?>" required>
+                        <input type="date" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_ingreso" placeholder="fecha de ingreso" value="<?php echo $cod10 ?>" required>
                     </div>
 
                     <div class="row justify-content-center ">

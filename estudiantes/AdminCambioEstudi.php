@@ -13,14 +13,15 @@ require_once("pueba.php");
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
     <style>
         .buscador {
-            width: 650px;
+            width: 650px !important;
         }
 
 
         body {
-            font-family: 'Montserrat', sans-serif;
+
             background-color: #0a705d !important;
         }
 
@@ -61,7 +62,7 @@ require_once("pueba.php");
 
         .card {
             box-shadow: 0 0 100px rgba(0, 0, 0, 0.5) !important;
-            margin-top: 100px !important;
+            margin-top: 50px !important;
         }
 
 
@@ -132,7 +133,7 @@ require_once("pueba.php");
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
                                 <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
                             </ul>
@@ -144,9 +145,7 @@ require_once("pueba.php");
                             <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Crear nuevo administrador</a>
-                        </li>
+
                     </ul>
                 </div>
 
@@ -335,7 +334,7 @@ require_once("pueba.php");
                     <div class="col-md-6 mb-3">
                         <div>
                             <label class="form-label">Teléfono:</label>
-                            <input type="text" value="<?php echo $cod17; ?>" style="text-align: center;" name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
+                            <input type="text" value="<?php echo $cod17; ?>"  name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
                         </div>
                     </div>
 
@@ -361,13 +360,13 @@ require_once("pueba.php");
                             ?>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 pt-4">
                         <label class="form-label">Alergias:</label>
                         <input type="text" value="<?php echo $cod12; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="alergias" placeholder="Alergias">
                     </div>
 
 
-                    <div class="col-md-6 movi">
+                    <div class="col-md-6 movi mb-5 pt-4">
                         <label class="form-label">Grupo</label>
                         <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
 

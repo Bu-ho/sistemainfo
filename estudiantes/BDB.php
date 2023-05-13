@@ -1,17 +1,19 @@
 <?php
 
 error_reporting(0);
-
+require_once("../conexion.php");
+$con = conectar();
 if (isset($_POST["BTNbuscar"])) {
-    require_once("../conexion.php");
-    $con = conectar();
+   
     $Ndocumento = $_POST["Bdocu"];
     $sql = "SELECT * FROM estudiantes WHERE numero_identificacion = '$Ndocumento'";
     $resul = mysqli_query($con, $sql);
+
     if (mysqli_num_rows($resul) > 0) {
        
         
         $row = mysqli_fetch_array($resul);
+        
         $b = "nombre_completo_estudiante";
         $c = "apellido_completo_estudiante";
         $d = "correo";
@@ -69,6 +71,7 @@ if (isset($_POST["BTNbuscar"])) {
               }
             });
         </script>';
-        return;
+      
     }
 }
+?>

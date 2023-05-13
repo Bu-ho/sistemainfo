@@ -14,9 +14,7 @@ require_once("mostrarDatosEstu.php");
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
-        .buscador {
-            width: 650px;
-        }
+        
 
 
         body {
@@ -57,9 +55,7 @@ require_once("mostrarDatosEstu.php");
             }
         }
 
-        .movi2 {
-            margin-left: 170px;
-        }
+       
     </style>
 
 
