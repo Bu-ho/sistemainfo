@@ -40,7 +40,7 @@ require_once("admindatos.php");
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="estudiantes/copy.php">Editar estudiante</a></li>
                                 <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+                                <li><a class="dropdown-item" href="grupomostrarestudiate.php">Estudiantes en un grupo</a></li>
 
                             </ul>
 
@@ -79,7 +79,8 @@ require_once("admindatos.php");
                             <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
-                       
+
+
                     </ul>
                 </div>
 

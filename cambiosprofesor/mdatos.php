@@ -96,14 +96,13 @@ if (isset($_POST['BTNcambio'])) {
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
     $cc_padre = $_POST['cc_padre'];
-    $grupo = $_POST['grupo'];
 
 
-    $sql = "UPDATE estudiantes SET numero_identificacion='$nueva_identificacion', nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena',grupo='$grupo', cc_padre='$cc_padre' WHERE numero_identificacion='$numero_identificacion'";
- 
+    $sql = "UPDATE estudiantes SET numero_identificacion='$nueva_identificacion', nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena', cc_padre='$cc_padre' WHERE numero_identificacion='$numero_identificacion'";
+
     $result = mysqli_query($con, $sql);
 
-    if ($result === 0) {
+    if ($result === false) {
         mysqli_close($con);
         echo '<p class="texto-invi"></p>';
         echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';

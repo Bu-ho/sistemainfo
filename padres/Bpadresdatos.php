@@ -1,5 +1,5 @@
 <?php
-require_once("admincambiosprofesor.php");
+require_once("buspadredatos.php");
 error_reporting(0);
 ?>
 
@@ -205,7 +205,7 @@ error_reporting(0);
 
                             $tipo = $row['tipo'];
                             if ($tipo == $cod7) {
-                                echo "<option value='$tipo'selected>$tipo</option>";
+                                echo "<option value='tipo' selected>$tipo</option>";
                             } else {
                                 echo "<option value='$tipo'>$tipo</option>";
                             }
@@ -316,7 +316,7 @@ error_reporting(0);
                         while ($row = mysqli_fetch_array($resultado)) {
 
                             $tipo = $row['N_grupo'];
-                            if ($tipo == $cod9) {
+                            if ($id_tipo == $cod9) {
                                 echo "<option value='$tipo' selected>$tipo</option>";
                             } else {
                                 echo "<option value='$tipo'>$tipo</option>";

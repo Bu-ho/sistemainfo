@@ -1,5 +1,5 @@
 <?php
-require_once("pueba.php");
+require_once("mdatos.php");
 
 
 ?>
@@ -96,56 +96,19 @@ require_once("pueba.php");
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Inicio</a>
                         </li>
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="estudiantes/copy.html">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+                                <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiante</a></li>
+
 
                             </ul>
-
-
-
                         </li>
-                        <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Padres
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Estudiantes Asignados a un
-                                        padre</a></li>
-
-                            </ul>
-
-
-
                         </li>
-                        <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Profesores
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
-                            </ul>
-
-
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
-                                inactivos</a>
-                        </li>
-
                     </ul>
                 </div>
 
@@ -169,7 +132,7 @@ require_once("pueba.php");
                     <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los estudiantes</h1>
                     <img src="../img/logo.png" alt="Descripción de la imagen">
                 </div>
-                <form action="AdminCambioEstudi.php" method="post">
+                <form action="" method="post">
                     <div class="input-group buscador mt-5 mb-3">
                         <input type="search" class="form-control rounded-pill border-0 border-bottom border-secondary" name="Bdocu" placeholder="Buscar...">
                         <div class="input-group-append">
@@ -183,12 +146,12 @@ require_once("pueba.php");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Número de documento actual:</label>
-                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
+                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" disabled name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">nuevo número de documento:</label>
 
-                    <input type="text" class="form-control rounded-pill border-0 border-bottom border-secondary" value="<?php echo $cod8; ?>" name="nuevo_documento" placeholder="ingrese el nuevo numero de documento:">
+                    <input type="text" class="form-control rounded-pill border-0 border-bottom border-secondary" disabled value="<?php echo $cod8; ?>" name="nuevo_documento" placeholder="ingrese el nuevo numero de documento:">
                 </div>
 
 
@@ -198,11 +161,11 @@ require_once("pueba.php");
                 <div class="col-md-6">
 
                     <label class="form-label">Nombre completo:</label>
-                    <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante" placeholder="Nombre completo">
+                    <input type="text" value="<?php echo $cod2; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="nombre_completo_estudiante" placeholder="Nombre completo">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Apellido completo:</label>
-                    <input type="text" value="<?php echo $cod3; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="apellido_completo_estudiante" placeholder="Apellido completo">
+                    <input type="text" value="<?php echo $cod3; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="apellido_completo_estudiante" placeholder="Apellido completo">
                 </div>
             </div>
             <div class="row mb-3">
@@ -232,17 +195,55 @@ require_once("pueba.php");
                     </select>
                 </div>
 
-                <div class="col-md-6">
-                    <label class="form-label">Fecha de nacimiento</label>
-                    <input type="date" value="<?php echo $cod4; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
+
+
+
+
+
+
+                <div class="col-md-6  mb-5">
+                    <label class="form-label">Grupo</label>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="grupo">
+
+                        <?php
+
+                        require_once('../conexion.php');
+                        $con = conectar();
+                        $query = "SELECT * FROM grupo";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+
+                            $tipo = $row['N_grupo'];
+                            if ($tipo == $cod9) {
+                                echo "<option value='$tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
+                    </select>
                 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
-            <div class="row mb-3">
+            <div class="row ">
                 <div class="col-md-12">
                     <label class="form-label">Dirección de residencia:</label>
-                    <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="direccion_residencia">
+                    <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" disabled name="direccion_residencia">
 
                 </div>
 
@@ -251,11 +252,11 @@ require_once("pueba.php");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Contraseña:</label>
-                    <input type="text" class="form-control rounded-pill border-0 border-bottom border-secondary" value="<?php echo $cod19 ?>" name="contrasena">
+                    <input type="text" class="form-control rounded-pill border-0 border-bottom border-secondary" value="<?php echo $cod19 ?>" disabled name="contrasena">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Correo</label>
-                    <input type="text" value="<?php echo $cod18; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="correo">
+                    <input type="text" value="<?php echo $cod18; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" disabled name="correo">
                 </div>
             </div>
             <div class="row">
@@ -264,7 +265,7 @@ require_once("pueba.php");
 
                 <div class="col-md-6  mb-3">
                     <label class="form-label">Tipo de documento</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="tipo_documento">
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="tipo_documento">
                         <?php
                         require_once('../conexion.php');
                         $con = conectar();
@@ -290,7 +291,7 @@ require_once("pueba.php");
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Eps</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="eps">
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="eps">
 
                         <?php
 
@@ -315,23 +316,23 @@ require_once("pueba.php");
                 <div class="row mb-3 ">
                     <div class="col-md-6">
                         <label class="form-label">Enfermedades:</label>
-                        <input type="text" value="<?php echo $cod13; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="enfermedades" placeholder="Enfermedades">
+                        <input type="text" value="<?php echo $cod13; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="enfermedades" placeholder="Enfermedades">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 ">
                         <label class="form-label">Alergias:</label>
-                        <input type="text" value="<?php echo $cod12; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="alergias" placeholder="Alergias">
+                        <input type="text" value="<?php echo $cod12; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="alergias" placeholder="Alergias">
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <div>
                             <label class="form-label">Teléfono:</label>
-                            <input type="text" value="<?php echo $cod17; ?>" name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
+                            <input type="text" value="<?php echo $cod17; ?>" disabled name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
                         </div>
                     </div>
 
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Tipo de usuarios</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="t_u">
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="t_u">
 
                             <?php
 
@@ -351,38 +352,19 @@ require_once("pueba.php");
                             ?>
                         </select>
                     </div>
-                    <div class="col-md-6 pt-4">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Alergias:</label>
-                        <input type="text" value="<?php echo $cod12; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="alergias" placeholder="Alergias">
+                        <input type="text" value="<?php echo $cod12; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="alergias" placeholder="Alergias">
                     </div>
 
-
-                    <div class="col-md-6 movi mb-5 pt-4">
-                        <label class="form-label">Grupo</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="grupo">
-
-                            <?php
-
-                            require_once('../conexion.php');
-                            $con = conectar();
-                            $query = "SELECT * FROM grupo";
-                            $resultado = mysqli_query($con, $query);
-
-                            while ($row = mysqli_fetch_array($resultado)) {
-
-                                $tipo = $row['N_grupo'];
-                                if ($tipo == $cod9) {
-                                    echo "<option value='$tipo' selected>$tipo</option>";
-                                } else {
-                                    echo "<option value='$tipo'>$tipo</option>";
-                                }
-                            }
-                            ?>
-                        </select>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Fecha de nacimiento</label>
+                        <input type="date" value="<?php echo $cod4; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" disabled name="fecha_nacimiento">
                     </div>
-                    <div class="col-md-6 ">
+
+                    <div class="col-md-6 mb-3 ">
                         <label class="form-label">Sexo</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo_e">
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="sexo_e">
 
                             <?php
 
@@ -406,13 +388,13 @@ require_once("pueba.php");
 
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Fecha de ingreso</label>
-                        <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
+                        <input type="date" value="<?php echo $cod10; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="form-label">Estado</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estado">
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="estado">
 
                             <?php
 
@@ -439,7 +421,7 @@ require_once("pueba.php");
 
                     <div class="col-md-6  mb-3">
                         <label class="form-label">Estrato</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="estrato">
+                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="estrato">
                             <?php
                             require_once('../conexion.php');
                             $con = conectar();

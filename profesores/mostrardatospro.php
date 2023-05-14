@@ -43,17 +43,74 @@ error_reporting(0);
 
     .card {
         box-shadow: 0 0 100px rgba(0, 0, 0, 0.5) !important;
+        margin-top: 50px;
     }
 </style>
 
 <body>
+
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../admin.php">
+                    <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                    Administrador
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
+                        </li>
+
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Estudiantes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../cambiosprofesor/buscadorestudi.html">Editar estudiante</a></li>
+
+
+                            </ul>
+
+
+
+                        </li>
+
+
+
+
+
+
+                    </ul>
+                </div>
+
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger" name="cerrarSesion" type="button">Cerrar
+                            Sesión</button>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+
 
     <form action="" method="post">
         <div class="container p-3">
             <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h1 class="mb-4 titulo" style="color: #0a705d;">Aquí pueden actualizar los datos los profesores</h1>
+                        <h1 class="mb-4 titulo" style="color: #0a705d;">Aquí puedes actualizar tus datos profesor</h1>
                         <img src="../img/logo.png" alt="Descripción de la imagen">
                     </div>
 
@@ -143,7 +200,7 @@ error_reporting(0);
 
                                     $tipo = $row['tipo'];
                                     if ($tipo == $cod7) {
-                                        echo "<option value='$tipo' selected>$tipo</option>";
+                                        echo "<option value='$tipo'selected>$tipo</option>";
                                     } else {
                                         echo "<option value='$tipo'>$tipo</option>";
                                     }

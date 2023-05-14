@@ -65,7 +65,7 @@ if (isset($_POST['Ndocumento'], $_POST['Contrasena'], $_POST['t_u'])) {
     $query = "SELECT * FROM padres_familia WHERE (numero_identificacion='$Ndocumento' AND contrasena='$Contrasena' AND t_usuario='$t_p')";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0) {
-      header('Location: padres/padresdatos.php');
+      header('Location: padres/padatosinicio.php');
       exit;
     } else {
       echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
