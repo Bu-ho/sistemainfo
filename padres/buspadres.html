@@ -86,9 +86,8 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
                                 <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/estugrupo.html">Estudiantes en un
-                                        grupo</a></li>
-
+                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes
+                                        en un grupo</a></li>
                             </ul>
 
 
@@ -100,9 +99,9 @@
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="buspadres.html">Editar padres</a></li>
                                 <li><a class="dropdown-item" href="">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="padreasing.php">Estudiantes Asignados a un
                                         padre</a></li>
 
                             </ul>
@@ -116,9 +115,10 @@
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a>
+                                </li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+
                             </ul>
 
 
@@ -132,13 +132,14 @@
                     </ul>
                 </div>
 
-
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="button">Cerrar
-                            Sesión</button>
-                    </li>
-                </ul>
+                 <form action="../cerrarsesion.php" method="post">
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                             <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                 Sesión</button>
+                         </li>
+                     </ul>
+                 </form>
             </div>
             </div>
 
@@ -148,7 +149,8 @@
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center mt-3">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona de búsqueda y actualización de padres o acudientes</h1>
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona de búsqueda y actualización de padres o
+                        acudientes</h1>
 
                     <img src="../img/padre.jpg" alt="Imagen de una profesora" style="margin-right: 300px;">
 

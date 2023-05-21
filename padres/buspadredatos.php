@@ -24,11 +24,10 @@ if (isset($_POST['BTNcambio'])) {
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
-    $grupo = $_POST['grupo'];
     $estado = $_POST['estado'];
+    $nroid_estudiante = $_POST['nroid_estudiante'];
 
-
-    $sql = "UPDATE padres_familia SET numero_identificacion='$nuevo_numero_identificacion', nombre_completo_padre='$nombre_completo_padre', apellido_completo_padre='$apellido_completo_padre', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena', d_grupo='$grupo', estado='$estado' WHERE numero_identificacion='$numero_identificacion'";
+    $sql = "UPDATE padres_familia SET numero_identificacion='$nuevo_numero_identificacion', nombre_completo_padre='$nombre_completo_padre', apellido_completo_padre='$apellido_completo_padre', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena',estado='$estado',nroid_estudiante='$nroid_estudiante' WHERE numero_identificacion='$numero_identificacion'";
 
     $result = mysqli_query($con, $sql);
 
@@ -83,7 +82,7 @@ if (isset($_POST["BTNbuscar"])) {
 
 
         $row = mysqli_fetch_array($resul);
-
+        $a = "nroid_estudiante";
         $b = "nombre_completo_padre";
         $c = "apellido_completo_padre";
         $d = "correo";
@@ -94,7 +93,6 @@ if (isset($_POST["BTNbuscar"])) {
         $i = "direccion_residencia";
         $j = "tipo_documento";
         $k = "numero_identificacion";
-        $l = "d_grupo";
         $m = "fecha_ingreso";
         $n = "alergias";
         $o = "enfermedades";
@@ -105,7 +103,7 @@ if (isset($_POST["BTNbuscar"])) {
 
 
 
-
+        $cod1 = $row[$a];
         $cod2 = $row[$b];
         $cod3 = $row[$c];
         $cod4 = $row[$g];
@@ -113,7 +111,6 @@ if (isset($_POST["BTNbuscar"])) {
         $cod6 = $row[$i];
         $cod7 = $row[$j];
         $cod8 = $row[$k];
-        $cod9 = $row[$l];
         $cod10 = $row[$m];
         $cod11 = $row[$f];
         $cod12 = $row[$n];

@@ -135,12 +135,14 @@ error_reporting(0);
                 </div>
 
 
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="button">Cerrar
-                            Sesión</button>
-                    </li>
-                </ul>
+                <form action="../cerrarsesion.php" method="post">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
             </div>
 
@@ -182,11 +184,11 @@ error_reporting(0);
                 <div class="col-md-6">
 
                     <label class="form-label">Nombre completo:</label>
-                    <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" placeholder="Nombre completo" name="nombre_completo_profesor">
+                    <input type="text" value="<?php echo $cod2; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" placeholder="Nombre completo" name="nombre_completo_padre">
                 </div>
                 <div class="col-md-6 movi">
                     <label class="form-label">Apellido completo:</label>
-                    <input type="text" value="<?php echo $cod3; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" placeholder="Apellido completo" name="apellido_completo_profesor">
+                    <input type="text" value="<?php echo $cod3; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" placeholder="Apellido completo" name="apellido_completo_padre">
                 </div>
             </div>
             <div class="row mb-3">
@@ -205,7 +207,7 @@ error_reporting(0);
 
                             $tipo = $row['tipo'];
                             if ($tipo == $cod7) {
-                                echo "<option value='tipo' selected>$tipo</option>";
+                                echo "<option value='$tipo'selected>$tipo</option>";
                             } else {
                                 echo "<option value='$tipo'>$tipo</option>";
                             }
@@ -303,20 +305,20 @@ error_reporting(0);
 
 
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Cambiar o asignar grupo</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="grupo">
+                    <label class="form-label">Asignar estudiante</label>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="nroid_estudiante">
 
                         <?php
 
                         require_once('../conexion.php');
                         $con = conectar();
-                        $query = "SELECT * FROM grupo";
+                        $query = "SELECT * FROM estudiantes";
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
 
-                            $tipo = $row['N_grupo'];
-                            if ($id_tipo == $cod9) {
+                            $tipo = $row['numero_identificacion'];
+                            if ($tipo == $cod1) {
                                 echo "<option value='$tipo' selected>$tipo</option>";
                             } else {
                                 echo "<option value='$tipo'>$tipo</option>";

@@ -103,9 +103,9 @@ require_once("pueba.php");
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="estudiantes/copy.html">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="copy.php">Editar estudiante</a></li>
                                 <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+                                <li><a class="dropdown-item" href="grupomostrarestudiate.php">Estudiantes en un grupo</a></li>
 
                             </ul>
 
@@ -120,7 +120,7 @@ require_once("pueba.php");
 
                                 <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
                                 <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
                                         padre</a></li>
 
                             </ul>
@@ -135,7 +135,7 @@ require_once("pueba.php");
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+
                             </ul>
 
 
@@ -150,12 +150,14 @@ require_once("pueba.php");
                 </div>
 
 
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="button">Cerrar
-                            Sesión</button>
-                    </li>
-                </ul>
+                <form action="../cerrarsesion.php" method="post">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
             </div>
 

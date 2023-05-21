@@ -135,12 +135,14 @@ error_reporting(0);
                 </div>
 
 
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="button">Cerrar
-                            Sesión</button>
-                    </li>
-                </ul>
+                <form action="../cerrarsesion.php" method="post">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
             </div>
 
