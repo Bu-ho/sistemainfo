@@ -9,11 +9,30 @@ require_once("mpdatosinicio.php");
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Estudiantes</title>
-    <!-- Agregar CSS de Bootstrap -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
 
     <style>
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
+        .nav-item {
+            font-size: 19px;
+            padding-left: 10px;
+        }
+
+        .card {
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5) !important;
+            margin-top: 100px;
+        }
+
+
         body {
 
             background-color: #0a705d;
@@ -38,9 +57,6 @@ require_once("mpdatosinicio.php");
 
         }
 
-        .card {
-            box-shadow: 0 0 100px rgba(0, 0, 0, 0.5) !important;
-        }
 
         @media (max-width: 768px) {
             .buscador {
@@ -58,6 +74,41 @@ require_once("mpdatosinicio.php");
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin.html">
+                    <img src="../paginap/img/logo.png" width="190" height="90" alt="Logo" class="img-fluid">
+
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../paginap/index.html">Inicio</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../paginap/simbolos.html">simbolos</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../paginap/historia.html">historia</a>
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+                <form action="../cerrarsesion.php" method="post">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            </div>
+        </nav>
+    </header>
     <div class="container p-3">
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
@@ -128,12 +179,12 @@ require_once("mpdatosinicio.php");
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id'];
+
                             $tipo = $row['N_sexo'];
-                            if ($id_tipo == $cod5) {
-                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            if ($tipo == $cod5) {
+                                echo "<option value='$tipo' selected>$tipo</option>";
                             } else {
-                                echo "<option value='$id_tipo'>$tipo</option>";
+                                echo "<option value='tipo'>$tipo</option>";
                             }
                         }
                         ?>
@@ -176,10 +227,10 @@ require_once("mpdatosinicio.php");
                         $query = "SELECT * FROM estratos";
                         $resultado = mysqli_query($con, $query);
                         while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id'];
+
                             $tipo = $row['nombre'];
-                            $selected = ($id_tipo == $cod16) ? 'selected' : '';
-                            echo "<option value='$id_tipo' $selected>$tipo</option>";
+                            $selected = ($tipo == $cod16) ? 'selected' : '';
+                            echo "<option value='$tipo' $selected>$tipo</option>";
                         }
 
                         ?>
@@ -196,12 +247,12 @@ require_once("mpdatosinicio.php");
                         $resultado = mysqli_query($con, $query);
 
                         while ($row = mysqli_fetch_array($resultado)) {
-                            $id_tipo = $row['id'];
+
                             $tipo = $row['nombre'];
-                            if ($id_tipo == $cod15) {
-                                echo "<option value='$id_tipo' selected>$tipo</option>";
+                            if ($tipo == $cod15) {
+                                echo "<option value='$tipo' selected>$tipo</option>";
                             } else {
-                                echo "<option value='$id_tipo'>$tipo</option>";
+                                echo "<option value='$tipo'>$tipo</option>";
                             }
                         }
                         ?>
@@ -232,7 +283,7 @@ require_once("mpdatosinicio.php");
                         </div>
                     </div>
                 </div>
-                
+
 
 
 

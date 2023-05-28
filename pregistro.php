@@ -250,12 +250,12 @@ if (isset($_POST['numero_documento'])) {
     }
 
 
-      $result2 = mysqli_query($con, $consulta);
-      if ($result2) {
-        mysqli_close($con);
-        echo '<p class="texto-invi">`</p>';
-        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-        echo '<script>
+    $result2 = mysqli_query($con, $consulta);
+    if ($result2) {
+      mysqli_close($con);
+      echo '<p class="texto-invi">`</p>';
+      echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+      echo '<script>
         Swal.fire({
           icon: "success",
           title: "¡Éxito!",
@@ -268,12 +268,12 @@ if (isset($_POST['numero_documento'])) {
           }
         });
       </script>';
-        exit;
-      } else {
-        mysqli_close($con);
-        echo '<p class="texto-invi">`</p>';
-        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-        echo '<script>
+      exit;
+    } else {
+      mysqli_close($con);
+      echo '<p class="texto-invi">`</p>';
+      echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
+      echo '<script>
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -284,7 +284,7 @@ if (isset($_POST['numero_documento'])) {
           }
         });
       </script>';
-        exit;
-      }
+      exit;
     }
   }
+}

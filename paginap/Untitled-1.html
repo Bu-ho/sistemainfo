@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vergamino</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: SourceSansPro, Helvetica, Arial, sans-serif;
+        }
+
+        .menu-nav {
+            background-color: #ffffff;
+            height: 4.5cm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .navbar-header {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+
+        .nav-link {
+            color: #666 !important;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 10px 20px;
+            position: relative;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #d52b1e !important;
+        }
+
+        .nav-link.active:after,
+        .nav-link:hover:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #d52b1e !important;
+            top: 48px !important;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background-color: #f9f9f9 !important;
+            width: 100vw !important;
+            left: 0;
+            right: 0;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+           top: 3.1em;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .movi {
+            bottom: 75px;
+            font-size: 12px;
+            right: 10px;
+            position: relative;
+            color: #666;
+        }
+
+        .navbar-brand.m-3 .fender:after {
+            content: "";
+            display: block;
+            width: 24%;
+            height: 2px;
+            background-color: #d52b1e;
+            bottom: 9px;
+            position: relative;
+            height: 6px;
+        }
+
+        .navbar-brand.m-3 span.fender {
+            color: #d52b1e !important;
+        }
+
+        .navbar-brand.m-3.line-highlight {
+            position: relative;
+        }
+
+        .navbar-brand.m-3.line-highlight {
+            color: #d52b1e !important;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .logo-img {
+            width: 150px;
+            height: 150px;
+            margin-right: 120px;
+        }
+
+        .red {
+            color: #d52b1e;
+        }
+
+        .center-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nov {
+            bottom: 50px;
+            position: relative;
+        }
+
+        .buscador {
+            right: 120px;
+            width: 640px;
+            position: relative;
+        }
+
+        .dropdown-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .dropdown-column {
+            flex: 1 1 33%;
+        }
+
+        .dropdown-column li {
+            list-style: none;
+        }
+
+        @media (max-width: 767px) {
+            .dropdown-menu {
+                top: calc(100% + 10px);
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: auto;
+                min-width: unset;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu-nav">
+        <div class="navbar-header">
+            <div class="right-menu movi">
+                <div class="container-fluid">
+                    <a class="navbar-brand m-3 line-highlight" href="#"><span class="fender"></span>FENDER.COM</a>
+                    <a class="navbar-brand m-3" href="#">PLAY</a>
+                    <a class="navbar-brand m-3" href="#">TUNE</a>
+                    <a class="navbar-brand m-3" href="#">BEGINNERS</a>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="m.png" alt="Logo" class="logo-img">
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 buscador" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </nav>
+
+    <div class="center-menu nov">
+        <ul class="nav">
+            <li class="nav-item dropdown-wrapper">
+                <a class="nav-link" href="#">GUITARRAS</a>
+                <div class="dropdown-menu w-100">
+                    <div class="dropdown-wrapper">
+                        <div class="dropdown-column">
+                            <ul>
+                                <li class="mt-4 pb-3" style="font-weight: bold;">DESTACADO</li>
+                                <hr class="pt-3">
+                                <li class="pb-2"> <span class="red"> Nuevos</span> Lanzamientos Para El 2022</li>
+                                <li class="pb-2">Kids Guitars</li>
+                                <li class="pb-2">Artist Signature Series</li>
+                                <li class="pb-2">Left-handed Guitars</li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-column">
+                            <ul class="">
+                                <li class="mt-4 pb-3" style="font-weight: bold;">BUSCAR POR MODELO</li>
+                                <hr class="pt-3">
+                                <li class="pb-2">Stratocaster</li>
+                                <li class="pb-2">Telecaster</li>
+                                <li class="pb-2">Jaguar</li>
+                                <li class="pb-2">Jazzmaster</li>
+                                <li class="pb-2">Lead</li>
+                                <li class="pb-2">Duo-Sonic</li>
+                                <li class="pb-2">Mustang</li>
+                                <li class="pb-2">Ver Más</li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-column">
+                            <ul>
+                                <li class="mt-4 pb-3" style="font-weight: bold;">BUSCAR POR SERIE</li>
+                                <hr pt-3>
+                                <li class="pb-2">American Professional II</li>
+                                <li class="pb-2">American Ultra Luxe</li>
+                                <li class="pb-2">American Ultra</li>
+                                <li class="pb-2">American Original</li>
+                                <li class="pb-2">American Performer</li>
+                                <li class="pb-2">Player Plus</li>
+                                <li class="pb-2">Player</li>
+                                <li class="pb-2">75th Anniversary</li>
+                                <li class="pb-2">Vintera</li>
+                                <li class="pb-2">Noventa</li>
+                                <li class="pb-2">Artist Signature</li>
+                                <li class="pb-2">Made In Japan</li>
+                                <li class="pb-2">Limited Edition</li>
+                                 <li class="pb-2">Limited Edition</li>
+                                  <li class="pb-2">Limited Edition</li>
+                                   <li class="pb-2">Limited Edition</li>
+                                    <li class="pb-2">Limited Edition</li>
+                                     <li class="pb-2">Limited Edition</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">AUDIO</a>
+                <div class="dropdown-menu w-100">
+                    <a class="dropdown-item" href="#">Item 4</a>
+                    <a class="dropdown-item" href="#">Item 5</a>
+                    <a class="dropdown-item" href="#">Item 6</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">ACOUSTASONIC</a>
+                <div class="dropdown-menu w-100">
+                    <a class="dropdown-item" href="#">Item 7</a>
+                    <a class="dropdown-item" href="#">Item 8</a>
+                    <a class="dropdown-item" href="#">Item 9</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">SONIDO</a>
+                <div class="dropdown-menu w-100">
+                    <a class="dropdown-item" href="#">Item 10</a>
+                    <a class="dropdown-item" href="#">Item 11</a>
+                    <a class="dropdown-item" href="#">Item 12</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">MUSIC</a>
+                <div class="dropdown-menu w-100">
+                    <a class="dropdown-item" href="#">Item 13</a>
+                    <a class="dropdown-item" href="#">Item 14</a>
+                    <a class="dropdown-item" href="#">Item 15</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">ELECTO</a>
+                <div class="dropdown-menu w-100">
+                    <a class="dropdown-item" href="#">Item 16</a>
+                    <a class="dropdown-item" href="#">Item 17</a>
+                    <a class="dropdown-item" href="#">Item 18</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    // Espera a que el documento esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtén todos los elementos con la clase 'dropdown' en el documento
+        var dropdowns = document.querySelectorAll('.dropdown');
+
+        // Agrega un controlador de eventos 'mouseenter' a cada elemento de la clase 'dropdown'
+        dropdowns.forEach(function (dropdown) {
+            dropdown.addEventListener('mouseenter', function () {
+                // Asegúrate de que el menú desplegable esté visible al pasar el mouse sobre él
+                if (!dropdown.classList.contains('show')) {
+                    dropdown.classList.add('show');
+                }
+            });
+
+            // Agrega un controlador de eventos 'mouseleave' a cada elemento de la clase 'dropdown'
+            dropdown.addEventListener('mouseleave', function () {
+                // Oculta el menú desplegable cuando el mouse sale de él
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            });
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

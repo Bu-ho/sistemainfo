@@ -100,7 +100,7 @@ if (isset($_POST['BTNcambio'])) {
 
 
     $sql = "UPDATE estudiantes SET numero_identificacion='$nueva_identificacion', nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena',grupo='$grupo', cc_padre='$cc_padre' WHERE numero_identificacion='$numero_identificacion'";
- 
+
     $result = mysqli_query($con, $sql);
 
     if ($result === 0) {

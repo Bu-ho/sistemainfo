@@ -74,10 +74,9 @@ require_once('conexion.php');
                             $resultado = mysqli_query($con, $query);
 
                             while ($row = mysqli_fetch_array($resultado)) {
-                        
+
                                 $tipo = $row['Nombre'];
                                 echo "<option value='$tipo'>$tipo</option>";
-                                
                             }
                             ?>
                         </select>
@@ -98,7 +97,7 @@ require_once('conexion.php');
                 </div>
             </div>
         </div>
-       
+
     </div>
     </div>
 

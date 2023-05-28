@@ -9,7 +9,7 @@ error_reporting(0);
 <head>
     <meta charset="UTF-8">
     <title>Formulario de profesores</title>
-    <!-- Agregar CSS de Bootstrap -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -88,9 +88,9 @@ error_reporting(0);
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../estudiantes/copy.html">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
                                 <li><a class="dropdown-item" href="../estudiantes/">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/estugrupo.html">Estudiantes en un
+                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes en un
                                         grupo</a></li>
 
                             </ul>
@@ -107,6 +107,8 @@ error_reporting(0);
                                 <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
                                 <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
                                         padre</a></li>
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                        padre</a></li>
 
                             </ul>
 
@@ -120,7 +122,7 @@ error_reporting(0);
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="profesores/buscador.html">Editar profesores</a></li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+
                             </ul>
 
 

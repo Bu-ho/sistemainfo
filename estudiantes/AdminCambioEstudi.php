@@ -9,7 +9,7 @@ require_once("pueba.php");
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Estudiantes</title>
-    <!-- Agregar CSS de Bootstrap -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">

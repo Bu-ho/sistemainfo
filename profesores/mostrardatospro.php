@@ -12,7 +12,7 @@ error_reporting(0);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar datos profesores</title>
-    <!-- Agregamos el CSS de Bootstrap -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
@@ -66,13 +66,17 @@ error_reporting(0);
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
                         </li>
-
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../cambiosprofesor/buscadorestudi.html">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="../cambiosprofesor/buscadorestudi.html">Editar
+                                        estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes
+                                        en un
+                                        grupo</a></li>
+
 
 
                             </ul>
@@ -80,11 +84,23 @@ error_reporting(0);
 
 
                         </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Padres
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                        padre</a></li>
+                            </ul>
 
 
 
+                        </li>
 
-
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                                inactivos</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -102,6 +118,7 @@ error_reporting(0);
             </div>
 
         </nav>
+
     </header>
 
 

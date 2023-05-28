@@ -1,143 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <!-- Agregamos el CSS de Bootstrap -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 </head>
+
 <body>
 
- <header>
+    <header>
 
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <div class="container-fluid">
-             <a class="navbar-brand" href="admin.html">
-                 <img src="img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                 Administrador
-             </a>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarNav">
-                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                     <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                     </li>
-                     <li class="nav-item dropdown dropdown-hover">
-                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                             data-bs-toggle="dropdown" aria-expanded="false">
-                             Estudiantes
-                         </a>
-                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             <li><a class="dropdown-item" href="#">Editar estudiante</a></li>
-                             <li><a class="dropdown-item" href="#">Total de estudiantes</a></li>
-                             <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin.html">
+                    <img src="img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                    Administrador
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Estudiantes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="#">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="estugrupo.html">Estudiantes en un grupo</a></li>
 
-                         </ul>
-
-
-
-                     </li>
-                     <li class="nav-item dropdown dropdown-hover">
-                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                             data-bs-toggle="dropdown" aria-expanded="false">
-                             Padres
-                         </a>
-                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             <li><a class="dropdown-item" href="">Editar padres</a></li>
-                             <li><a class="dropdown-item" href="">Total de padres</a></li>
-                             <li><a class="dropdown-item" href="#">Asignar un estudiante a un padre</a></li>
-                             <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
-                                     padre</a></li>
-
-                         </ul>
+                            </ul>
 
 
 
-                     </li>
-                     <li class="nav-item dropdown dropdown-hover">
-                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                             data-bs-toggle="dropdown" aria-expanded="false">
-                             Profesores
-                         </a>
-                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             <li><a class="dropdown-item" href="">Editar profesores</a></li>
-                             <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                             <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
-                         </ul>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Padres
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="#">Asignar un estudiante a un padre</a></li>
+                                <li><a class="dropdown-item" href="padreasing.html">Estudiantes Asignados a un
+                                        padre</a></li>
+
+                            </ul>
 
 
 
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
-                             inactivos</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link active" aria-current="page" href="#">Crear nuevo administrador</a>
-                     </li>
-                 </ul>
-             </div>
-             <div class="collapse navbar-collapse" id="navbarNav">
-                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                     <!-- Aquí van los elementos del navbar -->
-                 </ul>
-                 <ul class="navbar-nav">
-                     <li class="nav-item">
-                         <button class="btn btn-outline-danger" name="cerrarSesion" type="button" onclick="cerrarSesion()">Cerrar
-                             Sesión</button>
-                     </li>
-                 </ul>
-             </div>
-         </div>
-         
-     </nav>
- </header>
-       
-     <div class="container m-5">
-         <h2>Personas activas e inactivas del sistema</h2>
-         <div class="card m-5">
-             <div class="card-header">
-                 Lista de activos e inactivos
-             </div>
-             <div class="card-body ">
-                 <table class="table table-striped">
-         <div class="row">
-             <div class="col-md-12">
-                 <table class="table">
-                     <thead>
-                         <tr>
-                             <th>Tipo de usuario</th>
-                             <th>Activos</th>
-                             <th>Inactivos</th>
-                         </tr>
-                     </thead>
-                     <tbody>
-                         <tr>
-                             <td>Docentes</td>
-                             <td>10</td>
-                             <td>2</td>
-                         </tr>
-                         <tr>
-                             <td>Estudiantes</td>
-                             <td>75</td>
-                             <td>15</td>
-                         </tr>
-                         <tr>
-                             <td>Padres de familia</td>
-                             <td>30</td>
-                             <td>5</td>
-                         </tr>
-                     </tbody>
-                 </table>
-             </div>
-         </div>
-     </div>
-     </div>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Profesores
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="">Editar profesores</a></li>
+                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+                            </ul>
+
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.html">Activos e
+                                inactivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Crear nuevo administrador</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Aquí van los elementos del navbar -->
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="button"
+                                onclick="cerrarSesion()">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="container m-5">
+        <h2>Personas activas e inactivas del sistema</h2>
+        <div class="card m-5">
+            <div class="card-header">
+                Lista de activos e inactivos
+            </div>
+            <div class="card-body ">
+                <table class="table table-striped">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo de usuario</th>
+                                        <th>Activos</th>
+                                        <th>Inactivos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Docentes</td>
+                                        <td>10</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estudiantes</td>
+                                        <td>75</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Padres de familia</td>
+                                        <td>30</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

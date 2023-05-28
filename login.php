@@ -80,20 +80,10 @@ if (isset($_POST['Ndocumento'], $_POST['Contrasena'], $_POST['t_u'])) {
     }
   }
 
-  // Alerta de ingreso correcto
-  echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>';
-  echo "<script>
-  Swal.fire({
-    title: '¡Ingreso exitoso!',
-    text: 'Los datos ingresados son correctos',
-    icon: 'success',
-    confirmButtonText: 'Continuar'
-  })
-</script>";
 
 
 
-mysqli_close($con);
-exit;
+
+  mysqli_close($con);
+  exit;
 }
-

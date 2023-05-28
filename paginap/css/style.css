@@ -1,0 +1,24 @@
+.carousel{width: 550px;
+    margin-left: 85px;
+    top: 100px;
+    
+}
+.accordion{width: 550px; 
+margin-left: 700px;
+bottom: 370px;
+position: relative;}
+
+.carousel img{height: 370px;}
+
+.acordeon1{
+    width: 400px; 
+margin-left: 80px;
+bottom: 70px;
+position:relative;
+width: 10;
+}
+.footer{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+

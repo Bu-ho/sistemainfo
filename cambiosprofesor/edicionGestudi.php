@@ -9,7 +9,7 @@ require_once("mdatos.php");
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Estudiantes</title>
-    <!-- Agregar CSS de Bootstrap -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -83,47 +83,82 @@ require_once("mdatos.php");
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.html">
-                    <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                    Administrador
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Estudiantes
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiante</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../admin.php">
+                <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                Administrador
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Estudiantes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
+                            <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
+                                    grupo</a></li>
+                            <li><a class="dropdown-item" href="../profesores/">Total de estudiantes</a></li>
+
+                        </ul>
 
 
-                            </ul>
-                        </li>
-                        </li>
-                    </ul>
-                </div>
+
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Padres
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                    padre</a></li>
+                            <li><a class="dropdown-item" href="../profesores/">Total de padres</a></li>
+                        </ul>
 
 
+
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profesores
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
+
+                        </ul>
+
+
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            inactivos</a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <form action="../cerrarsesion.php" method="post">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="button">Cerrar
+                        <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
                             Sesión</button>
                     </li>
                 </ul>
-            </div>
-            </div>
+            </form>
+        </div>
+        </div>
 
-        </nav>
-
+    </nav>
     </header>
     <div class="container p-3">
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
@@ -171,29 +206,6 @@ require_once("mdatos.php");
             <div class="row mb-3">
 
 
-                <div class="col-md-6 movi">
-                    <label class="form-label">Acudiente</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="cc_padre">
-
-                        <?php
-
-                        require_once('../conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM padres_familia";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-
-                            $tipo = $row['numero_identificacion'];
-                            if ($tipo == $cod20) {
-                                echo "<option value='$tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                </div>
 
 
 
@@ -224,7 +236,32 @@ require_once("mdatos.php");
                         ?>
                     </select>
                 </div>
+                <div class="col-md-6 mb-5">
+                    <label class="form-label">Estado</label>
+                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="estado">
 
+                        <?php
+
+                        require_once('../conexion.php');
+                        $con = conectar();
+                        $query = "SELECT * FROM estados";
+                        $resultado = mysqli_query($con, $query);
+
+                        while ($row = mysqli_fetch_array($resultado)) {
+
+                            $tipo = $row['estado'];
+                            if ($tipo == $cod14) {
+                                echo "<option value='$tipo' selected>$tipo</option>";
+                            } else {
+                                echo "<option value='$tipo'>$tipo</option>";
+                            }
+                        }
+                        ?>
+
+
+
+                    </select>
+                </div>
 
 
 
@@ -392,34 +429,9 @@ require_once("mdatos.php");
                         <label class="form-label">Fecha de ingreso</label>
                         <input type="date" value="<?php echo $cod10; ?>" disabled class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Estado</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="estado">
-
-                            <?php
-
-                            require_once('../conexion.php');
-                            $con = conectar();
-                            $query = "SELECT * FROM estados";
-                            $resultado = mysqli_query($con, $query);
-
-                            while ($row = mysqli_fetch_array($resultado)) {
-
-                                $tipo = $row['estado'];
-                                if ($tipo == $cod14) {
-                                    echo "<option value='$tipo' selected>$tipo</option>";
-                                } else {
-                                    echo "<option value='$tipo'>$tipo</option>";
-                                }
-                            }
-                            ?>
 
 
-
-                        </select>
-                    </div>
-
-                    <div class="col-md-6  mb-3">
+                    <div class="col-md-12  mb-3">
                         <label class="form-label">Estrato</label>
                         <select class="form-select rounded-pill border-0 border-bottom border-secondary" disabled name="estrato">
                             <?php

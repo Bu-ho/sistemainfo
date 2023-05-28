@@ -12,7 +12,7 @@ require_once("admindatos.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administrador</title>
-    <!-- Agregamos el CSS de Bootstrap -->
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/admin.css">
 </head>

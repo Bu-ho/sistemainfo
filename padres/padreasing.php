@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administrador</title>
-    <!-- Agregamos el CSS de Bootstrap -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <style>
@@ -65,8 +65,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/estugrupo.html">Estudiantes en un
+                                <li><a class="dropdown-item" href="../estudiantes/">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes en un
                                         grupo</a></li>
 
                             </ul>
@@ -79,10 +79,11 @@
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a
-                                        un
+                                <li><a class="dropdown-item" href="../padres/copybuspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar studiante a un
                                         padre</a></li>
 
                             </ul>
@@ -95,10 +96,9 @@
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a>
-                                </li>
+                                <li><a class="dropdown-item" href="profesores/buscador.html">Editar profesores</a></li>
                                 <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+
                             </ul>
 
 

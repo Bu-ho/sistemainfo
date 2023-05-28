@@ -30,7 +30,7 @@
 
 
                                 <select class="form-control" id="tipo_documento" name="tipo_documento">
-                                 
+
                                     <?php
                                     require_once('conexion.php');
                                     $con = conectar();
@@ -38,11 +38,11 @@
                                     $query = "SELECT * FROM tipos_documento";
                                     $resultado = mysqli_query($con, $query);
 
-                                while ($row = mysqli_fetch_array($resultado)) {
-                                    
-                                    $tipo = $row['tipo'];
-                                    echo "<option value='$tipo'>$tipo</option>";
-                                }
+                                    while ($row = mysqli_fetch_array($resultado)) {
+
+                                        $tipo = $row['tipo'];
+                                        echo "<option value='$tipo'>$tipo</option>";
+                                    }
 
                                     ?>
                                 </select>
@@ -97,7 +97,7 @@
                                     echo "<option value='$tipo'>$tipo</option>";
                                 }
                                 ?>
-                                
+
                             </select>
                         </div>
 
@@ -121,7 +121,7 @@
                                     $resultado = mysqli_query($con, $query);
 
                                     while ($row = mysqli_fetch_array($resultado)) {
-                                      
+
                                         $tipo = $row['nombre'];
                                         echo "<option value='$tipo'>$tipo</option>";
                                     }
@@ -140,12 +140,9 @@
                                     $resultado = mysqli_query($con, $query);
 
                                     while ($row = mysqli_fetch_array($resultado)) {
-                                        
+
                                         $tipo = $row['nombre'];
                                         echo "<option value='$tipo'>$tipo</option>";
-
-                                    
-                                        
                                     }
                                     ?>
                                 </select>
@@ -201,7 +198,7 @@
                                 $resultado = mysqli_query($con, $query);
 
                                 while ($row = mysqli_fetch_array($resultado)) {
-                                 
+
                                     $tipo = $row['Nombre'];
                                     echo "<option value='$tipo'>$tipo</option>";
                                 }
