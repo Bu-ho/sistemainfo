@@ -30,7 +30,7 @@ mysqli_close($con);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">F
     <title>Estudiantes</title>
-    <!-- Add Bootstrap 5 CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/admin.css">
     <style>
@@ -148,7 +148,7 @@ mysqli_close($con);
                 <h1>Estudiantes</h1>
             </div>
             <div class="card-body">
-                <!-- Formulario para seleccionar el grupo -->
+              
                 <form method="post" class="mb-3">
                     <div class="select-group mb-3">
                         <label for="grupo" class="form-label">Seleccione el grupo:</label>
@@ -169,7 +169,7 @@ mysqli_close($con);
                     </div>
                 </form>
 
-                <!-- Tabla de resultados -->
+           
                 <?php if (isset($resultado)) : ?>
                     <?php if (mysqli_num_rows($resultado) > 0) : ?>
                         <div class="table-responsive mt-3">
@@ -213,7 +213,7 @@ mysqli_close($con);
     </div>
 
 
-    <!-- Add Bootstrap 5 JS and its dependencies -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>

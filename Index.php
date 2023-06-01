@@ -12,10 +12,24 @@ require_once('conexion.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
-    <!-- Enlace al archivo CSS de Bootstrap -->
+ 
+    <link rel="stylesheet" href="css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <style>
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .nav-item {
+        font-size: 19px;
+        padding-left: 10px;
+    }
+
     .hov1:hover {
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
         background-color: #206bfb !important;
@@ -43,7 +57,34 @@ require_once('conexion.php');
 
 <body>
 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin.html">
+                    <img src="paginap/img/logo.png" width="190" height="90" alt="Logo" class="img-fluid">
 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginap/index.html">Inicio</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginap/simbolos.html">simbolos</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginap/historia.html">historia</a>
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+    </header>
     <div class="row justify-content-center align-items-center vh-100">
         <div class="col-md-8 col-lg-6 col-xl-5">
             <div class="card shadow-lg border-0 rounded-3" style="background-color: #f8f9fa;">
@@ -106,7 +147,7 @@ require_once('conexion.php');
 
 
 
-    <!-- Enlace al archivo JS de Bootstrap -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-lLREaMnkfjNmbGsO6K1JpOYz9v/Rr6U0x6U+8NCw1c6fQKMQI1J0anm8ILXS0bRl9lm+ltKb/nup0L/QD3mJeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>

@@ -89,10 +89,11 @@ if (isset($_POST['BTNcambio'])) {
     $estrato = $_POST['estrato'];
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
+    $estados = $_POST['estados'];
     $contrasena = $_POST['contrasena'];
 
 
-    $sql = "UPDATE profesores SET nombre_completo_profesor='$nombre_completo_profesor', apellido_completo_profesor='$apellido_completo_profesor', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";
+    $sql = "UPDATE profesores SET nombre_completo_profesor='$nombre_completo_profesor', apellido_completo_profesor='$apellido_completo_profesor', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo',estado='$estados', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";
 
 
 

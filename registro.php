@@ -7,17 +7,45 @@
     <title>Registro de estudiante</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="admin.html">
+                    <img src="paginap/img/logo.png" width="190" height="90" alt="Logo" class="img-fluid">
 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginap/index.html">Inicio</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginap/simbolos.html">simbolos</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="paginap/historia.html">historia</a>
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+    </header>
     <div class="container p-3">
         <div class="card p-5">
 
-            <h2 class="text-center my-4 mb-5 pb-4">Registro de estudiante</h2>
+            <h2 class="text-center my-4 mb-5 pb-4">Registro</h2>
 
             <form method="POST" action="pregistro.php" class="text-center">
 

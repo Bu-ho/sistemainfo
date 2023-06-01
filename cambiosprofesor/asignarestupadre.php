@@ -116,16 +116,14 @@ if ($_POST) {
         <div class="container-fluid">
             <a class="navbar-brand" href="../admin.php">
                 <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                Administrador
+                Profesor
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
-                    </li>
+                  
                     <li class="nav-item dropdown dropdown-hover">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Estudiantes
@@ -170,6 +168,9 @@ if ($_POST) {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                             inactivos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar mis datos</a>
                     </li>
 
                 </ul>

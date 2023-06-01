@@ -30,7 +30,7 @@ mysqli_close($con);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">F
     <title>Estudiantes</title>
-    <!-- Add Bootstrap 5 CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/admin.css">
     <style>
@@ -66,16 +66,14 @@ mysqli_close($con);
             <div class="container-fluid">
                 <a class="navbar-brand" href="../admin.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                    Administrador
+                    Profesor
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
-                        </li>
+                        
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
@@ -121,6 +119,9 @@ mysqli_close($con);
                             <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                                 inactivos</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar mis datos</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -146,7 +147,7 @@ mysqli_close($con);
                 <h1>Estudiantes</h1>
             </div>
             <div class="card-body">
-                <!-- Formulario para seleccionar el grupo -->
+
                 <form method="post" class="mb-3">
                     <div class="select-group mb-3">
                         <label for="grupo" class="form-label">Seleccione el grupo:</label>
@@ -167,7 +168,7 @@ mysqli_close($con);
                     </div>
                 </form>
 
-                <!-- Tabla de resultados -->
+
                 <?php if (isset($resultado)) : ?>
                     <?php if (mysqli_num_rows($resultado) > 0) : ?>
                         <div class="table-responsive mt-3">
@@ -211,7 +212,7 @@ mysqli_close($con);
     </div>
 
 
-    <!-- Add Bootstrap 5 JS and its dependencies -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>

@@ -7,7 +7,7 @@ $con = conectar();
 if (isset($_POST["BTNbuscar"])) {
 
     $Ndocumento = $_POST["Bdocu"];
-    $sql = "SELECT * FROM estudiantes WHERE numero_identificacion = '$Ndocumento'";
+    $sql = "SELECT * FROM estudiantes WHERE numero_identificacion = '$Ndocumento'"; 
     $resul = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($resul) > 0) {

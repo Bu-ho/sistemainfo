@@ -1,6 +1,6 @@
 <?php
 require_once("pofesordatos.php");
-error_reporting(0);
+
 
 ?>
 
@@ -56,28 +56,23 @@ error_reporting(0);
             <div class="container-fluid">
                 <a class="navbar-brand" href="../admin.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                    Administrador
+                   Profesor
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
-                        </li>
+                        
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../cambiosprofesor/buscadorestudi.html">Editar
-                                        estudiantes</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes
-                                        en un
+                                <li><a class="dropdown-item" href="../cambiosprofesor/buscadorestudi.html">Editar estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../cambiosprofesor/estudiantesgrupo.php">Estudiantes en un
                                         grupo</a></li>
-
-
+                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
 
                             </ul>
 
@@ -91,15 +86,31 @@ error_reporting(0);
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
+                                <li><a class="dropdown-item" href="">Total de padres</a></li>
                             </ul>
 
 
 
                         </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profesores
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+                                <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
+
+                            </ul>
+
+
+
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
                                 inactivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="mostrardatospro.php">Editar mis datos</a>
                         </li>
 
                     </ul>
@@ -329,7 +340,7 @@ error_reporting(0);
 
 </body>
 
-<!-- Agregamos el JS de Bootstrap -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
