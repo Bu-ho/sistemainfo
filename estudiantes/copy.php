@@ -63,7 +63,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.html">
+                <a class="navbar-brand" href="../admin.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Administrador
                 </a>
@@ -81,7 +81,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="copy.php">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
                                 <li><a class="dropdown-item" href="grupomostrarestudiate.php">Estudiantes en un grupo</a></li>
 
                             </ul>
@@ -94,10 +94,11 @@
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
                                 <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/totalpadres.php">Total de padres</a></li>
                                 <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
 
                             </ul>
@@ -111,7 +112,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -119,7 +120,7 @@
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
 

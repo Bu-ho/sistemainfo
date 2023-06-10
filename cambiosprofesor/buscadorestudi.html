@@ -17,6 +17,13 @@
 
         }
 
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
 
         body {
             background-color: #0a705d !important;
@@ -64,7 +71,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.php">
+                <a class="navbar-brand" href="../profesores/mostrardatospro.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Profesor
                 </a>
@@ -74,7 +81,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
+
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -84,8 +91,8 @@
                                 <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
                                 <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
                                         grupo</a></li>
-                                <li><a class="dropdown-item" href="../profesores/">Total de estudiantes</a></li>
-
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
+                               
                             </ul>
 
 
@@ -97,9 +104,12 @@
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                <li><a class="dropdown-item" href="asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
-                                <li><a class="dropdown-item" href="../profesores/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="padreasing.php">Estudiantes asignados a padres</a>
+                                </li>
+                                <li><a class="dropdown-item" href="totalpadres.php">Total de padres</a></li>
+                            
                             </ul>
 
 
@@ -112,7 +122,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -120,12 +130,13 @@
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
-                                href="../profesores/mostrardatospro.php">Editar mis datos</a>
+                                href="../profesores/mostrardatospro.php">Editar
+                                mis datos</a>
                         </li>
 
                     </ul>
@@ -149,7 +160,7 @@
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center mt-3">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar grupo y acudiente de estudiante
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar grupo a estudiante
                     </h1>
 
                     <img src="../img/mujer.png" alt="Imagen de una profesora" style="margin-right: 300px;">

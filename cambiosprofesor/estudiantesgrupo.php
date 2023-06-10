@@ -44,8 +44,12 @@ mysqli_close($con);
 
         .card {
             width: 1000px !important;
-            margin-top: 100px;
+            margin-top: 120px;
 
+        }
+
+        body {
+            background-color: #0a705d;
         }
 
 
@@ -57,6 +61,15 @@ mysqli_close($con);
 
 
         }
+
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
     </style>
 </head>
 
@@ -64,7 +77,7 @@ mysqli_close($con);
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.php">
+                <a class="navbar-brand" href="../profesores/mostrardatospro.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Profesor
                 </a>
@@ -73,7 +86,7 @@ mysqli_close($con);
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
+
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
@@ -82,7 +95,7 @@ mysqli_close($con);
                                 <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
                                 <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
                                         grupo</a></li>
-                                <li><a class="dropdown-item" href="../profesores/">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
 
                             </ul>
 
@@ -94,9 +107,10 @@ mysqli_close($con);
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                <li><a class="dropdown-item" href="asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
-                                <li><a class="dropdown-item" href="../profesores/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="padreasing.php">Estudiantes asignados a padres</a></li>
+                                <li><a class="dropdown-item" href="totalpadres.php">Total de padres</a></li>
                             </ul>
 
 
@@ -108,7 +122,7 @@ mysqli_close($con);
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -116,11 +130,12 @@ mysqli_close($con);
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar mis datos</a>
+                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar
+                                mis datos</a>
                         </li>
 
                     </ul>
@@ -139,7 +154,6 @@ mysqli_close($con);
             </div>
 
         </nav>
-
     </header>
     <div class="container my-5">
         <div class="card">
@@ -194,7 +208,7 @@ mysqli_close($con);
                                             <td class="text-center"><?php echo $fila['nombre_completo_estudiante']; ?></td>
                                             <td class="text-center"><?php echo $fila['apellido_completo_estudiante']; ?></td>
                                             <td class="text-center"><?php echo $fila['grupo']; ?></td>
-                                            <td class="text-center"><?php echo $fila['estado_estudiante']; ?></td>
+                                            <td class="text-center"><?php echo $fila['estado']; ?></td>
 
                                         </tr>
                                     <?php endwhile; ?>

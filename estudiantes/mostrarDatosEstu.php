@@ -31,10 +31,8 @@ if (isset($_SESSION['Ndocumento'])) {
             $j = "tipo_documento";
             $k = "numero_identificacion";
             $l = "grupo";
-            $m = "fecha_ingreso";
             $n = "alergias";
             $o = "enfermedades";
-            $p = "estado_estudiante";
             $q = "eps";
             $r = "estrato";
             $s = "telefono";
@@ -50,11 +48,11 @@ if (isset($_SESSION['Ndocumento'])) {
             $cod7 = $row[$j];
             $cod8 = $row[$k];
             $cod9 = $row[$l];
-            $cod10 = $row[$m];
+            
             $cod11 = $row[$f];
             $cod12 = $row[$n];
             $cod13 = $row[$o];
-            $cod14 = $row[$p];
+           
             $cod15 = $row[$q];
             $cod16 = $row[$r];
             $cod17 = $row[$s];
@@ -90,6 +88,7 @@ if (isset($_POST['BTNcambio'])) {
     $telefono = $_POST['telefono'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
+    
 
 
     $sql = "UPDATE estudiantes SET nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena' WHERE numero_identificacion='$numero_identificacion'";

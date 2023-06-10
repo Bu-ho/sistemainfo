@@ -21,7 +21,7 @@ if ($_POST) {
                     showConfirmButton: false,
                     timer: 1500
                 }).then(function() {
-                    window.location.href = "tu_pagina.php";
+                    window.location.href = "asignarestu.php";
                 });
             </script>';
     } else {
@@ -41,7 +41,7 @@ if ($_POST) {
                         showConfirmButton: false,
                         timer: 1500
                     }).then(function() {
-                        window.location.href = "tu_pagina.php";
+                        window.location.href = "asignarestu.php";
                     });
                 </script>';
         } else {
@@ -55,7 +55,7 @@ if ($_POST) {
                         showConfirmButton: false,
                         timer: 1500
                     }).then(function() {
-                        window.location.href = "tu_pagina.php";
+                        window.location.href = "asignarestu.php";
                     });
                 </script>';
         }
@@ -71,6 +71,14 @@ if ($_POST) {
     <title>Agregar Estudiantes a Padre</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <style>
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+
         body {
             background-color: #0a705d;
             color: #fff;
@@ -112,83 +120,89 @@ if ($_POST) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../admin.php">
-                <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                Profesor
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Estudiantes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
-                            <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
-                                    grupo</a></li>
-                            <li><a class="dropdown-item" href="../profesores/">Total de estudiantes</a></li>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../profesores/mostrardatospro.php">
+                    <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                    Profesor
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        </ul>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Estudiantes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
+                                <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
+                                        grupo</a></li>
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
 
-
-
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Padres
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
-                                    padre</a></li>
-                            <li><a class="dropdown-item" href="../profesores/">Total de padres</a></li>
-                        </ul>
+                            </ul>
 
 
 
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profesores
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Padres
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="asignarestu.php">Asignar estudiante a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="padreasing.php">Estudiantes asignados a padres</a>
+                                </li>
+                                <li><a class="dropdown-item" href="totalpadres.php">Total de padres</a></li>
 
-                            <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
-
-                        </ul>
+                            </ul>
 
 
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
-                            inactivos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar mis datos</a>
-                    </li>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profesores
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                </ul>
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
+
+                            </ul>
+
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.php">Activos e
+                                inactivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar
+                                mis datos</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <form action="../cerrarsesion.php" method="post">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
             </div>
 
-
-            <form action="../cerrarsesion.php" method="post">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
-                            Sesión</button>
-                    </li>
-                </ul>
-            </form>
-        </div>
-        </div>
-
-    </nav>
+        </nav>
+    </header>
     <div class="container">
         <div class="card">
             <div class="card-header text-center">

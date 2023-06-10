@@ -34,6 +34,9 @@
             position: relative;
             font-size: 12px;
             white-space: nowrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .nav-link:hover {
@@ -236,6 +239,7 @@
                                      <li class="pb-2">Limited Edition</li>
                             </ul>
                         </div>
+                        
                     </div>
                 </div>
             </li>
@@ -282,32 +286,39 @@
         </ul>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
-
 <script>
     // Espera a que el documento esté completamente cargado
     document.addEventListener('DOMContentLoaded', function () {
         // Obtén todos los elementos con la clase 'dropdown' en el documento
-        var dropdowns = document.querySelectorAll('.dropdown');
+        var dropdowns = document.querySelectorAll('.nav-item.dropdown-wrapper');
 
         // Agrega un controlador de eventos 'mouseenter' a cada elemento de la clase 'dropdown'
         dropdowns.forEach(function (dropdown) {
+            var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
             dropdown.addEventListener('mouseenter', function () {
                 // Asegúrate de que el menú desplegable esté visible al pasar el mouse sobre él
-                if (!dropdown.classList.contains('show')) {
-                    dropdown.classList.add('show');
-                }
+                dropdownMenu.style.display = 'block';
+                dropdown.querySelector('.nav-link').classList.add('active');
             });
 
-            // Agrega un controlador de eventos 'mouseleave' a cada elemento de la clase 'dropdown'
             dropdown.addEventListener('mouseleave', function () {
-                // Oculta el menú desplegable cuando el mouse sale de él
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
+                // Oculta el menú desplegable solo si el mouse no está sobre él o sus elementos hijos
+                setTimeout(function () {
+                    var isMouseOverDropdown = dropdown.matches(':hover');
+                    if (!isMouseOverDropdown) {
+                        dropdownMenu.style.display = 'none';
+                        dropdown.querySelector('.nav-link').classList.remove('active');
+                    }
+                }, 100);
             });
         });
     });
 </script>
+
+
+
+
 
 
 </body>

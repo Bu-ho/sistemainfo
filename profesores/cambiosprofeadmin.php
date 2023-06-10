@@ -88,9 +88,10 @@ error_reporting(0);
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../estudiantes/copy.html">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/estugrupo.html">Estudiantes en un
+                                <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/totalestu.php">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes en
+                                        un
                                         grupo</a></li>
 
                             </ul>
@@ -103,9 +104,11 @@ error_reporting(0);
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/copybuspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/totalpadres.php">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
 
                             </ul>
@@ -118,16 +121,17 @@ error_reporting(0);
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
-                                <li><a class="dropdown-item" href="#">Asignar profesor a un grupo</a></li>
+                                <li><a class="dropdown-item" href="buscador.html">Editar profesores</a>
+                                </li>
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
+
                             </ul>
 
 
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
 

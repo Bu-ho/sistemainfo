@@ -76,6 +76,14 @@ require_once("mdatos.php");
                 margin-top: 40px;
             }
         }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
     </style>
 
     <link rel="stylesheet" href="css/admin.css">
@@ -83,89 +91,92 @@ require_once("mdatos.php");
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../admin.php">
-                <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                Profesor
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Estudiantes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
-                            <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
-                                    grupo</a></li>
-                            <li><a class="dropdown-item" href="../profesores/">Total de estudiantes</a></li>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../profesores/mostrardatospro.php">
+                    <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
+                    Profesor
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        </ul>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Estudiantes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
+                                <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
+                                        grupo</a></li>
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
 
-
-
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Padres
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
-                                    padre</a></li>
-                            <li><a class="dropdown-item" href="../profesores/">Total de padres</a></li>
-                        </ul>
+                            </ul>
 
 
 
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profesores
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Padres
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="asignarestu.php">Asignar estudiante a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="padreasing.php">Estudiantes asignados a padres</a></li>
+                                <li><a class="dropdown-item" href="totalpadres.php">Total de padres</a></li>
+                            </ul>
 
-                            <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
-
-                        </ul>
 
 
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profesores
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
-                            inactivos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar mis datos</a>
-                    </li>
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
 
-                </ul>
+                            </ul>
+
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.php">Activos e
+                                inactivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar
+                                mis datos</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <form action="../cerrarsesion.php" method="post">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
+                                Sesión</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
             </div>
 
-
-            <form action="../cerrarsesion.php" method="post">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <button class="btn btn-outline-danger" name="cerrarSesion" type="submit">Cerrar
-                            Sesión</button>
-                    </li>
-                </ul>
-            </form>
-        </div>
-        </div>
-
-    </nav>
+        </nav>
     </header>
     <div class="container p-3">
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los estudiantes</h1>
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar grupo a estudiante</h1>
                     <img src="../img/logo.png" alt="Descripción de la imagen">
                 </div>
                 <form action="" method="post">
@@ -182,7 +193,7 @@ require_once("mdatos.php");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Número de documento actual:</label>
-                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" disabled name="numero_documento" placeholder="hola">
+                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">nuevo número de documento:</label>

@@ -8,8 +8,13 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/admin.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+
+
+
+    </style>
+
 </head>
 
 
@@ -17,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="admin.html">
+                <a class="navbar-brand" href="paginap/index.html">
                     <img src="paginap/img/logo.png" width="190" height="90" alt="Logo" class="img-fluid">
 
                 </a>
@@ -37,7 +42,11 @@
                         </li>
                     </ul>
                 </div>
-
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success" href="Index.php">Iniciar sesión</a>
+                    </li>
+                </ul>
 
             </div>
         </nav>
@@ -45,7 +54,7 @@
     <div class="container p-3">
         <div class="card p-5">
 
-            <h2 class="text-center my-4 mb-5 pb-4">Registro</h2>
+            <h2 class="text-center my-4 mb-5 pb-4 text">Registro</h2>
 
             <form method="POST" action="pregistro.php" class="text-center">
 
@@ -217,7 +226,6 @@
                             <label for="contrasena" class="p-2">Contraseña</label>
                             <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
                         </div>
-
                         <div class="form-group pb-4 mb-3">
                             <label for="tipo_documento" class="pb-3">Tipo de usuario</label>
                             <select class="form-control" name="tipo_usu">
@@ -226,13 +234,16 @@
                                 $resultado = mysqli_query($con, $query);
 
                                 while ($row = mysqli_fetch_array($resultado)) {
-
                                     $tipo = $row['Nombre'];
-                                    echo "<option value='$tipo'>$tipo</option>";
+                                    // Omitir la opción "Administrador"
+                                    if ($tipo != 'Administrador') {
+                                        echo "<option value='$tipo'>$tipo</option>";
+                                    }
                                 }
                                 ?>
                             </select>
                         </div>
+
 
                         <button type="submit" class="btn btn-primary">Registrar</button>
 

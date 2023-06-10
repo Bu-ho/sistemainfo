@@ -36,7 +36,6 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_estud
         width: 80%;
         left: 100px;
         position: relative;
-        margin-top: 200px !important;
     }
 
     .text-center {
@@ -48,32 +47,39 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_estud
     .table {
         margin-top: 20px;
     }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
 </style>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.php">
+                <a class="navbar-brand" href="../profesores/mostrardatospro.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                    Administrador
+                    Profesor
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../admin.php">Inicio</a>
-                        </li>
+
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="copy.php">Editar estudiante</a></li>
+                                <li><a class="dropdown-item" href="buscadorestudi.html">Editar estudiantes</a></li>
+                                <li><a class="dropdown-item" href="estudiantesgrupo.php">Estudiantes en un
+                                        grupo</a></li>
                                 <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="grupomostrarestudiate.php">Estudiantes en un grupo</a></li>
 
                             </ul>
 
@@ -85,13 +91,10 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_estud
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/totalpadres.php">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
-                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
-                                        padre</a></li>
-
+                                <li><a class="dropdown-item" href="padreasing.php">Estudiantes asignados a padres</a></li>
+                                <li><a class="dropdown-item" href="totalpadres.php">Total de padres</a></li>
                             </ul>
 
 
@@ -102,8 +105,8 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_estud
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="../profesores/totalprofe.php">Total de profesores</a></li>
+
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -111,8 +114,12 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_estud
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.php">Activos e
+                            <a class="nav-link active" aria-current="page" href="cactivoseinactivos.php">Activos e
                                 inactivos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../profesores/mostrardatospro.php">Editar
+                                mis datos</a>
                         </li>
 
                     </ul>
@@ -131,7 +138,6 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_estud
             </div>
 
         </nav>
-
     </header>
     <div class="container m-5">
         <h2 class="text-center"> Total de estudiantes registrados</h2>

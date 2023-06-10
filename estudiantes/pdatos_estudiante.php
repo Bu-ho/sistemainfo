@@ -78,7 +78,7 @@ require_once("mostrarDatosEstu.php");
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="admin.html">
+                <a class="navbar-brand" href="../paginap/index.html">
                     <img src="../paginap/img/logo.png" width="190" height="90" alt="Logo" class="img-fluid">
 
                 </a>
@@ -166,7 +166,7 @@ require_once("mostrarDatosEstu.php");
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Fecha de nacimiento</label>
-                    <input type="date" value="<?php echo $cod10; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
+                    <input type="date" value="<?php echo $cod4; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
                 </div>
                 <div class="col-md-6 ">
                     <label class="form-label">Sexo</label>

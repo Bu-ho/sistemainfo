@@ -8,7 +8,7 @@ error_reporting(0);
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulario de profesores</title>
+    <title>Formulario de padres</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
@@ -103,11 +103,11 @@ error_reporting(0);
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/copybuspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="padres/copybuspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="padres/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="padres/padreasing.php">Estudiantes Asignados a un
                                         padre</a></li>
-                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                <li><a class="dropdown-item" href="padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
 
                             </ul>
@@ -154,7 +154,7 @@ error_reporting(0);
         <div class="card p-4 mx-auto p-3" style="max-width: 700px; background-color: #f8f9fa;">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los profesores</h1>
+                    <h1 class="mb-4 titulo" style="color: #0a705d;">Zona para actualizar a los padres</h1>
                     <img src="../img/logo.png" alt="Descripción de la imagen">
                 </div>
                 <form action="" method="post">
@@ -171,7 +171,7 @@ error_reporting(0);
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label class="form-label">Número de documento actual:</label>
-                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="hola">
+                    <input type="text" readonly value="<?php echo $cod8; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="numero_documento" placeholder="Numero de documento actual">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">nuevo número de documento:</label>
@@ -301,38 +301,12 @@ error_reporting(0);
                 <div class="col-md-6 mb-3">
                     <div>
                         <label class="form-label">Teléfono:</label>
-                        <input type="text" value="<?php echo $cod17; ?>" style="text-align: center;" name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
+                        <input type="text" value="<?php echo $cod17; ?>" name="telefono" class="form-control rounded-pill border-0 border-bottom border-secondary">
                     </div>
                 </div>
 
 
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Asignar estudiante</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="nroid_estudiante">
 
-                        <?php
-
-                        require_once('../conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM estudiantes";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-
-                            $tipo = $row['numero_identificacion'];
-                            if ($tipo == $cod1) {
-                                echo "<option value='$tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
-
-
-
-                    </select>
-
-                </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Estado</label>
@@ -369,32 +343,10 @@ error_reporting(0);
                 </div>
                 <div class="col-md-6 pt-4">
                     <label class="form-label">Tipo de usuario</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="t_usuario">
-
-                        <?php
-
-                        require_once('../conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM tipo_usuario";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-
-                            $tipo = $row['Nombre'];
-                            if ($tipo == $cod11) {
-                                echo "<option value='$tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
-
-
-
-                    </select>
+                    <input type="text" value="<?php echo $cod11; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="">
 
                 </div>
-                <div class="col-md-6 pt-4 mb-5">
+                <div class="col-md-6 pt-4 mb-5 " style="margin-left:200px ;">
                     <label class="form-label">Sexo</label>
                     <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="sexo">
 

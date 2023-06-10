@@ -86,7 +86,7 @@ require_once("pueba.php");
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.html">
+                <a class="navbar-brand" href="../admin.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Administrador
                 </a>
@@ -104,7 +104,7 @@ require_once("pueba.php");
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="copy.php">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
                                 <li><a class="dropdown-item" href="grupomostrarestudiate.php">Estudiantes en un grupo</a></li>
 
                             </ul>
@@ -117,10 +117,11 @@ require_once("pueba.php");
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/copybuspadres.html">Editar padres</a></li>
                                 <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
                                 <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
 
                             </ul>
@@ -134,7 +135,7 @@ require_once("pueba.php");
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -142,7 +143,7 @@ require_once("pueba.php");
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
 
@@ -207,48 +208,8 @@ require_once("pueba.php");
                     <input type="text" value="<?php echo $cod3; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="apellido_completo_estudiante" placeholder="Apellido completo">
                 </div>
             </div>
-            <div class="row mb-3">
 
 
-                <div class="col-md-6 movi">
-                    <label class="form-label">Acudiente</label>
-                    <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="cc_padre">
-
-                        <?php
-
-                        require_once('../conexion.php');
-                        $con = conectar();
-                        $query = "SELECT * FROM padres_familia";
-                        $resultado = mysqli_query($con, $query);
-
-                        while ($row = mysqli_fetch_array($resultado)) {
-
-                            $tipo = $row['numero_identificacion'];
-                            if ($tipo == $cod20) {
-                                echo "<option value='$tipo' selected>$tipo</option>";
-                            } else {
-                                echo "<option value='$tipo'>$tipo</option>";
-                            }
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Fecha de nacimiento</label>
-                    <input type="date" value="<?php echo $cod4; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
-                </div>
-
-
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label class="form-label">Dirección de residencia:</label>
-                    <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="direccion_residencia">
-
-                </div>
-
-            </div>
 
             <div class="row mb-3">
                 <div class="col-md-6">
@@ -332,26 +293,8 @@ require_once("pueba.php");
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">Tipo de usuarios</label>
-                        <select class="form-select rounded-pill border-0 border-bottom border-secondary" name="t_u">
-
-                            <?php
-
-
-                            $query = "SELECT * FROM tipo_usuario";
-                            $resultado = mysqli_query($con, $query);
-
-                            while ($row = mysqli_fetch_array($resultado)) {
-
-                                $tipo = $row['Nombre'];
-                                if ($tipo == $cod11) {
-                                    echo "<option value='$tipo' selected>$tipo</option>";
-                                } else {
-                                    echo "<option value='$tipo'>$tipo</option>";
-                                }
-                            }
-                            ?>
-                        </select>
+                        <label class="form-label">Tipo de usuario</label>
+                        <input type="text" value="<?php echo $cod11; ?>" readonly class="form-control rounded-pill border-0 border-bottom border-secondary" name="">
                     </div>
                     <div class="col-md-6 pt-4">
                         <label class="form-label">Alergias:</label>
@@ -458,8 +401,27 @@ require_once("pueba.php");
                         </select>
                     </div>
                 </div>
+                <div class="row mb-3 " style="margin-left: 130px;">
 
 
+
+
+                    <div class="col-md-6">
+                        <label class="form-label">Fecha de nacimiento</label>
+                        <input type="date" value="<?php echo $cod4; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="fecha_nacimiento">
+                    </div>
+
+
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label class="form-label">Dirección de residencia:</label>
+                        <input type="text" value="<?php echo $cod6; ?>" class="form-control rounded-pill border-0 border-bottom border-secondary" name="direccion_residencia">
+
+                    </div>
+
+                </div>
 
 
 

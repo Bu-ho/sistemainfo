@@ -1,7 +1,7 @@
 <?php
 
 
-error_reporting(0);
+
 require_once("../conexion.php");
 $con = conectar();
 if (isset($_POST["BTNbuscar"])) {
@@ -29,11 +29,10 @@ if (isset($_POST["BTNbuscar"])) {
         $m = "fecha_ingreso";
         $n = "alergias";
         $o = "enfermedades";
-        $p = "estado_estudiante";
+        $p = "estado";
         $q = "eps";
         $r = "estrato";
         $s = "telefono";
-        $t = "cc_padre";
 
 
 
@@ -55,7 +54,7 @@ if (isset($_POST["BTNbuscar"])) {
         $cod17 = $row[$s];
         $cod18 = $row[$d];
         $cod19 = $row[$e];
-        $cod20 = $row[$t];
+
     } else {
 
         echo '<p class="texto-invi"></p>';
@@ -80,25 +79,12 @@ if (isset($_POST['BTNcambio'])) {
 
     $con = conectar();
 
-    $nueva_identificacion = $_POST['nuevo_documento'];
+    $grupo = $_POST['grupo'];
     $numero_identificacion = $_POST['numero_documento'];
-    $nombre_completo_estudiante = $_POST['nombre_completo_estudiante'];
-    $apellido_completo_estudiante = $_POST['apellido_completo_estudiante'];
-    $fecha_nacimiento = $_POST['fecha_nacimiento'];
-    $sexo_e = $_POST['sexo_e'];
-    $direccion_residencia = $_POST['direccion_residencia'];
-    $tipo_documento = $_POST['tipo_documento'];
-    $alergias = $_POST['alergias'];
-    $enfermedades = $_POST['enfermedades'];
-    $eps = $_POST['eps'];
-    $estrato = $_POST['estrato'];
-    $telefono = $_POST['telefono'];
-    $correo = $_POST['correo'];
-    $contrasena = $_POST['contrasena'];
-    $cc_padre = $_POST['cc_padre'];
 
 
-    $sql = "UPDATE estudiantes SET numero_identificacion='$nueva_identificacion', nombre_completo_estudiante='$nombre_completo_estudiante', apellido_completo_estudiante='$apellido_completo_estudiante', fecha_nacimiento='$fecha_nacimiento', sexo_e='$sexo_e', direccion_residencia='$direccion_residencia', tipo_documento='$tipo_documento', alergias='$alergias', enfermedades='$enfermedades', eps='$eps', estrato='$estrato', telefono='$telefono', correo='$correo', contrasena='$contrasena', cc_padre='$cc_padre' WHERE numero_identificacion='$numero_identificacion'";
+
+    $sql = "UPDATE estudiantes SET grupo='$grupo' WHERE numero_identificacion='$numero_identificacion'";
 
     $result = mysqli_query($con, $sql);
 

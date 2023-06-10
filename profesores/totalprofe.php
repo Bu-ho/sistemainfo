@@ -71,9 +71,9 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_profe
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../estudiantes/copy.php">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/">Total de estudiantes</a></li>
-                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes
-                                        en un
+                                <li><a class="dropdown-item" href="../estudiantes/totalestu.php">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../estudiantes/grupomostrarestudiate.php">Estudiantes en
+                                        un
                                         grupo</a></li>
 
                             </ul>
@@ -86,15 +86,14 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_profe
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/copybuspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/padreasing.html">Estudiantes Asignados a un
+                                <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/totalpadres.php">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
                                         padre</a></li>
                                 <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
 
                             </ul>
-
 
 
                         </li>
@@ -103,8 +102,9 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_profe
                                 Profesores
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="buscador.html">Editar profesores</a>
+                                </li>
+                                <li><a class="dropdown-item" href="totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -112,7 +112,7 @@ $query = mysqli_query($con, "SELECT numero_identificacion, nombre_completo_profe
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
 

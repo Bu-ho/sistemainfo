@@ -77,7 +77,7 @@ require_once("mpdatosinicio.php");
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="admin.html">
+                <a class="navbar-brand" href="../admin.php">
                     <img src="../paginap/img/logo.png" width="190" height="90" alt="Logo" class="img-fluid">
 
                 </a>

@@ -54,16 +54,16 @@ require_once("pofesordatos.php");
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.php">
+                <a class="navbar-brand" href="../profesores/mostrardatospro.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
-                   Profesor
+                    Profesor
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
+
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Estudiantes
@@ -72,7 +72,7 @@ require_once("pofesordatos.php");
                                 <li><a class="dropdown-item" href="../cambiosprofesor/buscadorestudi.html">Editar estudiantes</a></li>
                                 <li><a class="dropdown-item" href="../cambiosprofesor/estudiantesgrupo.php">Estudiantes en un
                                         grupo</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="../cambiosprofesor/totalestu.php">Total de estudiantes</a></li>
 
                             </ul>
 
@@ -84,9 +84,11 @@ require_once("pofesordatos.php");
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
+                                <li><a class="dropdown-item" href="../cambiosprofesor/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
-                                <li><a class="dropdown-item" href="">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../cambiosprofesor/padreasing.php">Estudiantes asignados a padres</a></li>
+                                <li><a class="dropdown-item" href="../cambiosprofesor/totalpadres.php">Total de padres</a></li>
+                                
                             </ul>
 
 
@@ -98,7 +100,7 @@ require_once("pofesordatos.php");
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="../profesores/">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="../cambiosprofesor/totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -106,11 +108,12 @@ require_once("pofesordatos.php");
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cambiosprofesor/cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="mostrardatospro.php">Editar mis datos</a>
+                            <a class="nav-link active" aria-current="page" href="mostrardatospro.php">Editar
+                                mis datos</a>
                         </li>
 
                     </ul>
@@ -129,9 +132,7 @@ require_once("pofesordatos.php");
             </div>
 
         </nav>
-
     </header>
-
 
 
 

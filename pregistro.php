@@ -1,5 +1,5 @@
 <?php
-// Se incluye el archivo de conexión a la base de datos
+
 include_once("conexion.php");
 require_once("registro.php");
 
@@ -53,7 +53,7 @@ if (isset($_POST['numero_documento'])) {
       </script>';
       exit;
     } else {
-      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado_estudiante, eps, estrato, telefono, correo, contrasena) 
+      $consulta = "INSERT INTO estudiantes (nombre_completo_estudiante, apellido_completo_estudiante, fecha_nacimiento, sexo_e, direccion_residencia, tipo_documento, numero_identificacion,fecha_ingreso, t_usuario, alergias, enfermedades,estado, eps, estrato, telefono, correo, contrasena) 
                                                     VALUES ('$nombre', '$apellido', '$fecha_n', '$sexo', '$direccion', '$t_documento', '$Ndocumento', '$fecha_registro','$rol', '$alergia', '$enfermedad','Activo', '$eps', '$estrato', '$tel', '$correo', '$contrasena')";
 
       $result2 = mysqli_query($con, $consulta);

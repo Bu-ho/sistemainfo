@@ -10,7 +10,7 @@ if (isset($_POST['grupo'])) {
 
 
     $sql = "SELECT estudiantes.*, grupo.id_director FROM estudiantes
-            JOIN grupo ON estudiantes.grupo = grupo.N_grupo
+           JOIN grupo ON estudiantes.grupo = grupo.N_grupo
             WHERE estudiantes.grupo = '$grupo_escogido'";
     $resultado = mysqli_query($con, $sql);
 }
@@ -30,7 +30,7 @@ mysqli_close($con);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">F
     <title>Estudiantes</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/admin.css">
     <style>
@@ -44,8 +44,12 @@ mysqli_close($con);
 
         .card {
             width: 1000px !important;
-            margin-top: 100px;
+            margin-top: 120px;
 
+        }
+
+        body {
+            background-color: #0a705d;
         }
 
 
@@ -64,7 +68,7 @@ mysqli_close($con);
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../admin.html">
+                <a class="navbar-brand" href="../admin.php">
                     <img src="../img/logo.png" width="50" height="30" alt="Logo" class="img-fluid">
                     Administrador
                 </a>
@@ -82,7 +86,7 @@ mysqli_close($con);
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="copy.php">Editar estudiante</a></li>
-                                <li><a class="dropdown-item" href="">Total de estudiantes</a></li>
+                                <li><a class="dropdown-item" href="totalestu.php">Total de estudiantes</a></li>
                                 <li><a class="dropdown-item" href="grupomostrarestudiate.php">Estudiantes en un grupo</a></li>
 
                             </ul>
@@ -95,10 +99,11 @@ mysqli_close($con);
                                 Padres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
                                 <li><a class="dropdown-item" href="../padres/buspadres.html">Editar padres</a></li>
-                                <li><a class="dropdown-item" href="../padres/">Total de padres</a></li>
+                                <li><a class="dropdown-item" href="../padres/totalpadres.php">Total de padres</a></li>
                                 <li><a class="dropdown-item" href="../padres/padreasing.php">Estudiantes Asignados a un
+                                        padre</a></li>
+                                <li><a class="dropdown-item" href="../padres/asignarestu.php">Asignar estudiante a un
                                         padre</a></li>
 
                             </ul>
@@ -112,7 +117,7 @@ mysqli_close($con);
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="../profesores/buscador.html">Editar profesores</a></li>
-                                <li><a class="dropdown-item" href="">Total de profesores</a></li>
+                                <li><a class="dropdown-item" href="../profesores/totalprofe.php">Total de profesores</a></li>
 
                             </ul>
 
@@ -120,7 +125,7 @@ mysqli_close($con);
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.html">Activos e
+                            <a class="nav-link active" aria-current="page" href="../cactivoseinactivos.php">Activos e
                                 inactivos</a>
                         </li>
 
@@ -148,7 +153,7 @@ mysqli_close($con);
                 <h1>Estudiantes</h1>
             </div>
             <div class="card-body">
-              
+
                 <form method="post" class="mb-3">
                     <div class="select-group mb-3">
                         <label for="grupo" class="form-label">Seleccione el grupo:</label>
@@ -169,7 +174,7 @@ mysqli_close($con);
                     </div>
                 </form>
 
-           
+
                 <?php if (isset($resultado)) : ?>
                     <?php if (mysqli_num_rows($resultado) > 0) : ?>
                         <div class="table-responsive mt-3">
@@ -195,7 +200,7 @@ mysqli_close($con);
                                             <td class="text-center"><?php echo $fila['nombre_completo_estudiante']; ?></td>
                                             <td class="text-center"><?php echo $fila['apellido_completo_estudiante']; ?></td>
                                             <td class="text-center"><?php echo $fila['grupo']; ?></td>
-                                            <td class="text-center"><?php echo $fila['estado_estudiante']; ?></td>
+                                            <td class="text-center"><?php echo $fila['estado']; ?></td>
 
                                         </tr>
                                     <?php endwhile; ?>
